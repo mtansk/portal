@@ -1,0 +1,52 @@
+.main_div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;
+
+    padding: 1rem 2rem;
+
+    cursor: auto;
+
+    background-color: var(--main_white);
+    border-radius: 1rem;
+
+    width: clamp(18rem, 90svw, 25rem);
+
+    height: 90svh;
+
+    .header {
+        font-size: 1.4rem;
+        height: 2.5rem;
+    }
+
+    .body {
+        flex-grow: 1;
+
+        max-height: calc(100% - 8rem);
+        overflow-y: auto;
+        scrollbar-width: thin;
+        scrollbar-gutter: stable;
+
+        max-width: 25rem;
+    }
+
+    .buttons {
+        height: 3rem;
+    }
+}
+
+@media (max-width: 36rem) {
+    .main_div {
+        padding: 1rem;
+
+        .header {
+        }
+
+        .body {
+        }
+
+        .buttons {
+        }
+    }
+}

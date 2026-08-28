@@ -1,0 +1,128 @@
+.body {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+
+    margin: 1rem 2rem;
+
+    .main_div {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+
+        padding: 1rem 2rem;
+        border-radius: 1rem;
+        width: clamp(20rem, 90%, 50rem);
+
+        background-color: var(--main_white);
+
+        .date_div {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+            .date {
+                font-size: 0.9rem;
+                line-height: 1;
+                font-weight: 450;
+                color: #444444;
+                margin-left: 1rem;
+            }
+            .payslips {
+                display: flex;
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+    }
+}
+
+.payslip_div {
+    display: grid;
+    grid-template-areas:
+        "period details"
+        "name total";
+    grid-template-columns: minmax(0, 1fr) 9rem;
+
+    padding: 0.3rem 0.6rem;
+    background-color: var(--darker1);
+    border-radius: 0.4rem;
+
+    &:hover {
+        background-color: var(--darker2);
+        cursor: pointer;
+    }
+
+    .period {
+        grid-area: period;
+
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        word-break: break-word;
+
+        font-size: 0.9rem;
+        line-height: 1.1;
+        color: #444444;
+    }
+
+    .details {
+        grid-area: details;
+
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        gap: 0.3rem;
+
+        font-size: 0.9rem;
+        line-height: 1.1;
+        color: #444444;
+    }
+
+    .name {
+        grid-area: name;
+
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        word-break: break-word;
+
+        font-size: 1rem;
+        line-height: 1.1;
+    }
+
+    .total {
+        grid-area: total;
+
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-start;
+
+        font-size: 1rem;
+        line-height: 1.1;
+        font-weight: 500;
+    }
+}
+
+@media (max-width: 54rem) {
+    .body {
+        margin: 1rem 0;
+        .main_div {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+
+            padding: 1rem;
+            border-radius: 1rem;
+            width: 95svw;
+            box-sizing: border-box;
+
+            .group_div {
+                display: flex;
+                flex-direction: column;
+                gap: 0.6rem;
+
+                padding: 0.5rem;
+                background-color: var(--main_white);
+                border-radius: 1rem;
+            }
+        }
+    }
+}

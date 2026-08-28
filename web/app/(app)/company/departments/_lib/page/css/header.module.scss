@@ -1,0 +1,32 @@
+.header_div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    background-color: var(--darker1);
+
+    .main_div {
+        display: grid;
+        grid-template-areas:
+            "title"
+            "add";
+        row-gap: 0.5rem;
+
+        width: clamp(20rem, 95%, 60rem);
+        box-sizing: border-box;
+
+        margin: 1rem 2rem 0.5rem;
+
+        .title {
+            grid-area: title;
+
+            font-size: 1.4rem;
+            line-height: 1.1;
+        }
+
+        .add {
+            grid-area: add;
+        }
+    }
+}

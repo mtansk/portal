@@ -1,0 +1,26 @@
+.horizontal_nav_container {
+    display: flex;
+    gap: 1.5rem;
+
+    background-color: #d6d6d6;
+    border-radius: 0.4rem;
+
+    width: fit-content;
+
+    padding: 0.3rem 1rem;
+
+    .link {
+        padding: 0.2rem 0.4rem;
+        border-radius: 0.4rem;
+        background-color: #d6d6d6;
+
+        &.active {
+            background-color: var(--darker1);
+            font-weight: 500;
+        }
+
+        &:hover:not(.active) {
+            text-decoration: underline;
+        }
+    }
+}

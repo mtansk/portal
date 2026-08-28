@@ -1,0 +1,96 @@
+/* 
+    Form
+*/
+
+.modal_form {
+    display: flex;
+
+    .form_handler {
+        display: flex;
+        flex-direction: column;
+
+        background-color: var(--main_white);
+        border-radius: 1rem;
+
+        .form_title {
+            display: none;
+        }
+
+        .header {
+            font-size: 0.9rem;
+            font-weight: 500;
+            padding: 0.3rem 0.6rem;
+            background-color: var(--darker1);
+            border-radius: 0.5rem;
+        }
+
+        .form_buttons {
+            padding: 0.5rem 1rem 1rem;
+        }
+    }
+}
+
+/* 
+    Modal
+*/
+
+.root {
+    dialog {
+        /*     cursor: pointer; */
+        max-height: calc(100svh - 2rem);
+        max-width: calc(100svw - 4px);
+
+        padding: 0;
+        outline: none;
+        border: 0;
+        background-color: transparent;
+
+        z-index: 999;
+
+        &::backdrop {
+            background-color: #5555559c;
+        }
+
+        form.modal_form {
+            .form_handler {
+                > .form_title {
+                    display: flex;
+
+                    font-size: 1.2rem;
+                    padding: 0.5rem 1rem;
+
+                    margin-left: 2rem;
+                    margin-bottom: 0.8rem;
+                }
+            }
+        }
+
+        > button {
+            background-color: var(--darker1);
+            color: #616161;
+            border: none;
+            border-radius: 0.6rem;
+            font-weight: 600;
+            font-size: 1.2rem;
+
+            position: absolute;
+            top: 0.2rem;
+            right: 0.2rem;
+
+            padding: 0.2rem;
+
+            &:hover {
+                background-color: var(--darker2);
+                color: black;
+
+                cursor: pointer;
+            }
+
+            transition: all 0.2s ease-in-out;
+        }
+    }
+
+    form {
+        cursor: auto !important;
+    }
+}

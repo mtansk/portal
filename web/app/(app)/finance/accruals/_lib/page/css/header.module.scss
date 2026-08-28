@@ -1,0 +1,90 @@
+@use "./../../../../../../css/buttons.module" as *;
+
+.finance_header_div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: var(--darker1);
+    min-height: 5.5rem;
+
+    .main_div {
+        display: grid;
+        grid-template-areas:
+            "title e e1"
+            "nav e period"
+            "add e options";
+        grid-template-columns: auto auto auto;
+
+        row-gap: 0.5rem;
+
+        margin: 2rem 0 1rem;
+        width: clamp(20rem, 90%, 70rem);
+
+        .title {
+            grid-area: title;
+
+            font-size: 1.5rem;
+        }
+
+        .nav {
+            grid-area: nav;
+        }
+
+        .add_div {
+            grid-area: add;
+
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+
+            .stripe {
+                width: 1px;
+                height: 2rem;
+                background-color: #afafaf;
+            }
+
+            button {
+                min-width: 10rem;
+            }
+        }
+
+        .options {
+            grid-area: options;
+        }
+
+        .period {
+            grid-area: period;
+
+            display: flex;
+            justify-content: flex-end;
+        }
+    }
+}
+
+@media (max-width: 54rem) {
+    .finance_header_div {
+        .main_div {
+            grid-template-areas:
+                "title"
+                "nav"
+                "period"
+                "options"
+                "add";
+            grid-template-columns: auto;
+            justify-items: start;
+
+            row-gap: 1rem;
+
+            margin: 2rem 1rem 1rem;
+
+            .add_div {
+                button {
+                    line-height: 1.1;
+                    min-width: 6rem;
+                    width: fit-content;
+                }
+            }
+        }
+    }
+}

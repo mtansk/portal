@@ -1,0 +1,82 @@
+.main_div {
+    display: grid;
+    grid-template-areas:
+        "name params"
+        "note round";
+    grid-template-columns: 18rem 11rem;
+    column-gap: 3rem;
+    row-gap: 1rem;
+
+    padding: 0 2rem 1rem;
+
+    .name {
+        grid-area: name;
+
+        display: flex;
+        flex-direction: column;
+        gap: 0.4rem;
+    }
+
+    .params_div {
+        grid-area: params;
+
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 0.4rem;
+
+        .qty,
+        .rate {
+            height: 3.7rem;
+        }
+
+        input {
+            font-size: 1.2rem;
+            line-height: 1;
+            width: 9rem;
+
+            padding: 0.2rem 0.4rem;
+
+            &:not(:focus-visible) {
+                text-align: right;
+            }
+        }
+
+        .total {
+            display: flex;
+            justify-content: flex-end;
+
+            margin-right: 1rem;
+
+            font-weight: 500;
+            font-size: 1.1rem;
+        }
+    }
+
+    .note {
+        grid-area: note;
+
+        font-size: 0.8rem;
+        line-height: 1.1;
+        color: #242424;
+    }
+
+    .round {
+        grid-area: round;
+    }
+}
+
+@media (max-width: 40rem) {
+    .main_div {
+        grid-template-areas:
+            "name"
+            "params"
+            "round"
+            "note";
+        grid-template-columns: 17rem;
+        row-gap: 1rem;
+        justify-items: end;
+
+        padding: 0 1rem 1rem;
+    }
+}

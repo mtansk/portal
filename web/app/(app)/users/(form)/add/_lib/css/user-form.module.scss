@@ -1,0 +1,57 @@
+.main_div {
+    display: grid;
+    grid-template-areas:
+        "names contacts"
+        "dept account";
+    grid-template-columns: 15rem 15rem;
+    justify-content: center;
+
+    row-gap: 2rem;
+    column-gap: 4rem;
+
+    padding: 0 2rem 1rem;
+
+    input {
+        width: 14rem;
+        box-sizing: border-box;
+    }
+
+    select {
+        width: 14rem;
+        box-sizing: border-box;
+    }
+
+    textarea {
+        width: 14rem;
+        height: 6rem;
+        box-sizing: border-box;
+    }
+
+    .names {
+        grid-area: names;
+
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
+    }
+
+    .contacts {
+        grid-area: contacts;
+
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
+    }
+
+    .dept {
+        grid-area: dept;
+
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
+    }
+
+    .account {
+        grid-area: account;
+    }
+}

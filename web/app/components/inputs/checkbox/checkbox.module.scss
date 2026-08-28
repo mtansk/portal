@@ -1,0 +1,35 @@
+@use "./../../../css/sass.module" as *;
+
+.custom_checkbox_div {
+    @extend .empty_button;
+
+    display: flex;
+    gap: 0.2rem;
+
+    padding: 0.2rem 0.4rem;
+    border-radius: 0.4rem;
+    user-select: none;
+    transition: all 0.2s ease-in-out;
+
+    width: fit-content;
+
+    &.enabled {
+        &:hover {
+            background-color: var(--darker2);
+            cursor: pointer;
+        }
+    }
+
+    &.disabled {
+        cursor: default;
+    }
+
+    > div {
+        display: flex;
+        align-items: center;
+    }
+
+    .text_div {
+        line-height: 1.1;
+    }
+}

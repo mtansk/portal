@@ -1,0 +1,53 @@
+.form_page_container_div {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    background-color: var(--main_white);
+
+    .header_div {
+        background-color: var(--darker1);
+        display: flex;
+        justify-content: center;
+
+        .header_main {
+            width: clamp(20rem, 80%, 65rem);
+            margin: 1rem 0;
+            box-sizing: border-box;
+
+            display: flex;
+            flex-direction: column;
+            gap: 0.2rem;
+
+            > div {
+                display: flex;
+                align-items: center;
+            }
+
+            > .name {
+                font-size: 1.7rem;
+            }
+        }
+    }
+
+    > .body_div {
+        display: flex;
+        justify-content: center;
+        flex-shrink: 1;
+        flex-grow: 1;
+
+        margin: 2rem 0;
+
+        /*         > * {
+            width: clamp(20rem, 80%, 65rem);
+        } */
+
+        form.modal_form {
+            .form_handler {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                flex-grow: 1;
+            }
+        }
+    }
+}

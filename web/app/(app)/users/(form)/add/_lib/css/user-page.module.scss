@@ -1,0 +1,76 @@
+.main_div {
+    display: grid;
+    grid-template-areas:
+        "block account"
+        "contacts account"
+        "links links"
+        "buttons buttons";
+    grid-template-columns: 1fr 1fr;
+    column-gap: 4rem;
+
+    .block {
+        grid-area: block;
+
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
+
+        max-width: 22rem;
+
+        .dept {
+            font-size: 1.1rem;
+            line-height: 1.1;
+            font-weight: 500;
+            color: #585858;
+        }
+
+        .name {
+            font-weight: 500;
+            font-size: 1.2rem;
+            line-height: 1.1;
+        }
+
+        .title {
+            font-size: 0.9rem;
+            line-height: 1;
+            font-style: italic;
+            color: #3d3d3d;
+        }
+    }
+
+    .account {
+        grid-area: account;
+
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .contacts {
+        grid-area: contacts;
+
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
+
+        .contact {
+            font-size: 1.1rem;
+        }
+    }
+
+    .links {
+        grid-area: links;
+
+        display: flex;
+        flex-direction: column;
+        gap: 0.6rem;
+
+        .links_div {
+            display: flex;
+            gap: 1rem;
+        }
+    }
+
+    .buttons_div {
+        grid-area: buttons;
+    }
+}

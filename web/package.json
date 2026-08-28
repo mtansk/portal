@@ -1,0 +1,51 @@
+{
+    "name": "fot",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "dev": "next dev --turbopack --experimental-https",
+        "build": "next build",
+        "start": "next start",
+        "lint": "next lint"
+    },
+    "dependencies": {
+        "@date-fns/tz": "^1.2.0",
+        "@date-fns/utc": "^2.1.0",
+        "@mdx-js/loader": "^3.1.0",
+        "@mdx-js/react": "^3.1.0",
+        "@next/mdx": "^15.2.4",
+        "@types/mdx": "^2.0.13",
+        "@types/react": "19.1.0",
+        "@types/react-dom": "19.1.2",
+        "@types/yandex-metrika-tag": "^2.0.7",
+        "@vercel/functions": "^2.0.0",
+        "client-only": "^0.0.1",
+        "date-fns": "^4.1.0",
+        "eslint-config-prettier": "^10.1.2",
+        "eslint-plugin-prettier": "^5.2.6",
+        "framer-motion": "^12.6.5",
+        "jose": "^6.0.10",
+        "material-symbols": "^0.29.2",
+        "next": "^15.2.4",
+        "prettier": "^3.5.3",
+        "react": "^19.1.0",
+        "react-dom": "^19.1.0",
+        "react-transition-progress": "^0.0.4",
+        "server-only": "^0.0.1",
+        "sharp": "^0.34.1"
+    },
+    "devDependencies": {
+        "@eslint/js": "^9.24.0",
+        "@types/node": "^22.14.0",
+        "@types/node-fetch": "^2.6.12",
+        "eslint": "^9.24.0",
+        "eslint-config-next": "15.2.4",
+        "eslint-plugin-react": "^7.37.5",
+        "eslint-plugin-react-hooks": "^5.2.0",
+        "globals": "^16.0.0",
+        "sass": "^1.86.3",
+        "ts-node": "^10.9.2",
+        "typescript": "^5.8.3",
+        "typescript-eslint": "^8.29.1"
+    }
+}

@@ -1,0 +1,55 @@
+.objects {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+
+    margin-left: 10%;
+
+    .object_div.empty {
+        display: flex;
+
+        flex-direction: column;
+        gap: 0.5rem;
+
+        padding: 0.2rem 0.5rem;
+
+        .empty_text {
+            color: #646464;
+            font-size: 0.9rem;
+            line-height: 1.1;
+        }
+
+        .add {
+            font-size: 1rem;
+            line-height: 1.1;
+            font-weight: 500;
+            color: var(--input_border);
+
+            &:hover {
+                cursor: pointer;
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+@media (max-width: 54rem) {
+    .objects {
+        gap: 0.8rem;
+
+        margin-left: 2rem;
+
+        .object_div.empty {
+            padding: 0.2rem 0.5rem;
+
+            .add {
+                color: var(--input_border);
+
+                &:hover {
+                    cursor: pointer;
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,17 @@
+.time {
+    width: 3.5rem;
+
+    font-size: 1.2rem;
+    text-align: center;
+
+    background-color: #fefefe;
+    color: black;
+
+    &:focus {
+        text-align: left;
+
+        &::placeholder {
+            color: transparent;
+        }
+    }
+}

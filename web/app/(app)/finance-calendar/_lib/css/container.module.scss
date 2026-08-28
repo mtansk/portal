@@ -1,0 +1,12 @@
+.calendar_container {
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+@media (max-width: 77rem) {
+    .calendar_container {
+        height: auto;
+    }
+}

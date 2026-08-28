@@ -1,0 +1,104 @@
+@use "./../../../../../../css/sass.module" as *;
+@use "./../../../../../../css/buttons.module" as *;
+
+.body_div {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+
+    width: 100%;
+
+    .main_div {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 1rem;
+
+        margin: 2rem 0;
+
+        width: clamp(20rem, 90%, 50rem);
+        box-sizing: border-box;
+        background-color: var(--main_white);
+
+        padding: 2rem 2rem;
+        border-radius: 1rem;
+
+        .empty {
+            color: #1f1f1f;
+            font-weight: 450;
+            font-size: 0.9rem;
+            line-height: 1.1;
+        }
+
+        .sheets_div {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+
+            width: 100%;
+
+            .sheet_div {
+                display: grid;
+                grid-template-areas:
+                    "name time"
+                    "name hours";
+                grid-template-columns: minmax(0, 1fr) 9rem;
+                grid-template-rows: auto minmax(0, 1fr);
+                column-gap: 1rem;
+
+                background-color: var(--darker1);
+                border-radius: 0.4rem;
+
+                padding: 0.3rem 1rem;
+
+                transition: all 0.2s;
+
+                &:hover {
+                    cursor: pointer;
+                    background-color: var(--darker2);
+                }
+
+                .name {
+                    grid-area: name;
+
+                    display: flex;
+                    gap: 0.5rem;
+
+                    line-height: 1.1;
+                    word-wrap: break-word;
+                    word-break: break-word;
+                    overflow-wrap: break-word;
+                }
+
+                .time {
+                    grid-area: time;
+
+                    display: flex;
+                    justify-content: flex-end;
+                    height: fit-content;
+
+                    font-weight: 500;
+                }
+
+                .hours {
+                    grid-area: hours;
+
+                    display: flex;
+                    justify-content: flex-end;
+
+                    font-size: 0.9rem;
+                    line-height: 1.1;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 36rem) {
+    .body_div {
+        .main_div {
+            width: 95svw;
+            padding: 1rem;
+        }
+    }
+}

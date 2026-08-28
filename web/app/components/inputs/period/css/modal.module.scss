@@ -1,0 +1,154 @@
+.period_picker_modal {
+    background-color: var(--main_white);
+    padding: 2rem 2rem;
+    border-radius: 1rem;
+
+    cursor: auto;
+
+    display: grid;
+    grid-template-areas: "nav body year";
+    grid-template-columns: 6rem 13rem 6rem;
+    gap: 3rem;
+    height: 18rem;
+
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+
+    .month_button {
+        height: auto !important;
+    }
+
+    &.custom {
+        height: 23rem;
+    }
+
+    * {
+        user-select: none;
+    }
+
+    .block {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0.3rem;
+
+        border-radius: 0.5rem;
+
+        border: 0.1rem solid transparent;
+        box-sizing: border-box;
+        height: fit-content;
+
+        &.selected {
+            background-color: var(--n_b);
+        }
+
+        &:hover {
+            cursor: pointer;
+
+            &:not(.selected) {
+                background-color: var(--darker2);
+            }
+        }
+
+        &.current:not(.year_block) {
+            border: 0.1rem solid #ff000052;
+        }
+    }
+
+    .nav_div {
+        grid-area: nav;
+    }
+
+    .nav_div,
+    .year {
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
+    }
+
+    .body {
+        grid-area: body;
+        &.month {
+            display: grid;
+            grid-template-columns: repeat(3, 4rem);
+            gap: 0.5rem;
+            height: fit-content;
+
+            .block {
+                width: 4rem;
+                height: 4rem;
+            }
+
+            .month_name {
+                font-size: 1.2rem;
+            }
+        }
+
+        &.week {
+            .week_block {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                gap: 1.5rem;
+
+                padding: 0.3rem;
+
+                border-radius: 0.5rem;
+
+                .week_number {
+                    font-size: 1.4rem;
+                    width: 2rem;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+
+                .dates {
+                    display: flex;
+                    flex-grow: 1;
+                    justify-content: center;
+                }
+            }
+        }
+
+        &.year_body {
+            font-size: 1.5rem;
+        }
+    }
+
+    .year {
+        grid-area: year;
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 45rem) {
+    .period_picker_modal {
+        grid-template-areas:
+            "nav"
+            "body"
+            "year";
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        justify-items: center;
+
+        width: fit-content;
+        min-height: 30rem;
+        width: auto;
+        min-width: 16rem;
+
+        overflow-x: auto;
+
+        padding: 1rem 0.5rem;
+
+        .nav_div {
+            flex-direction: row;
+        }
+
+        .year {
+            flex-direction: row;
+        }
+    }
+}

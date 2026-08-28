@@ -1,0 +1,81 @@
+.main_div {
+    display: grid;
+    grid-template-areas:
+        "name select"
+        "name box";
+    grid-template-columns: 17rem 12rem;
+    column-gap: 3rem;
+    row-gap: 1rem;
+
+    padding: 0.5rem 2rem 1rem;
+    background-color: var(--main_white);
+
+    .name {
+        grid-area: name;
+    }
+
+    .select {
+        grid-area: select;
+        select {
+            width: 10rem;
+        }
+    }
+
+    .color_box {
+        grid-area: box;
+
+        height: 3rem;
+        width: 10rem;
+
+        border-radius: 0.5rem;
+
+        transition: all 0.5s;
+    }
+}
+
+.r {
+    color: #efdfff;
+    color: #bae2ca;
+    color: #ffd1a8;
+    color: #c3e0ff;
+    color: #f0e5a8;
+    color: #e6a8f0;
+    color: #a8daf0;
+    color: #a8d1f0;
+}
+
+@media (max-width: 36rem) {
+    .main_div {
+        display: grid;
+        grid-template-areas:
+            "name"
+            "select"
+            "box";
+        grid-template-columns: 18rem;
+
+        padding: 0.5rem 1rem 1rem;
+        background-color: var(--main_white);
+
+        .name {
+            grid-area: name;
+        }
+
+        .select {
+            grid-area: select;
+            select {
+                width: 10rem;
+            }
+        }
+
+        .color_box {
+            grid-area: box;
+
+            height: 3rem;
+            width: 10rem;
+
+            border-radius: 0.5rem;
+
+            transition: all 0.5s;
+        }
+    }
+}

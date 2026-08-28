@@ -1,0 +1,33 @@
+@use "./sass.module" as *;
+
+.bold_text_button {
+    @extend .empty_button;
+
+    font-weight: 500;
+
+    transition: all 0.2s linear;
+
+    &:hover {
+        &:not(:disabled) {
+            text-decoration: underline;
+        }
+    }
+
+    &:disabled {
+        color: #b6b6b6;
+    }
+}
+
+.bold_blue_button {
+    @extend .bold_text_button;
+    font-size: 1rem;
+    line-height: 1.1;
+    color: var(--input_border);
+}
+
+.bold_red_button {
+    @extend .bold_text_button;
+    font-size: 1rem;
+    line-height: 1.1;
+    color: var(--red_button);
+}

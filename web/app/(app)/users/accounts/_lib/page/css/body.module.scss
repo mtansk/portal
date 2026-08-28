@@ -1,0 +1,135 @@
+.body_div {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+
+    width: 100%;
+
+    .main_div {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 1rem;
+
+        margin: 2rem 0;
+
+        width: clamp(20rem, 90%, 50rem);
+        background-color: var(--main_white);
+        box-sizing: border-box;
+
+        padding: 2rem 2rem;
+        border-radius: 1rem;
+
+        .users {
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+
+            .user_div {
+                display: grid;
+                grid-template-columns: auto 7rem;
+                column-gap: 0.5rem;
+
+                background-color: var(--darker1);
+                border-radius: 0.4rem;
+
+                padding: 0.3rem 1rem;
+
+                transition: all 0.2s;
+
+                &:not(.invited) {
+                    grid-template-areas:
+                        "dept e1"
+                        "name status"
+                        "title access";
+                }
+
+                &.invited {
+                    grid-template-areas:
+                        "dept e1"
+                        "name status"
+                        "title status";
+                }
+
+                &:hover {
+                    cursor: pointer;
+                    background-color: var(--darker2);
+                }
+
+                .dept {
+                    grid-area: dept;
+
+                    font-size: 0.9rem;
+                    line-height: 1.1;
+                    color: #585858;
+                }
+
+                .name {
+                    grid-area: name;
+
+                    font-weight: 500;
+                    line-height: 1.1;
+                }
+
+                .title {
+                    grid-area: title;
+
+                    font-size: 0.9rem;
+                    line-height: 1.1;
+                }
+
+                .status {
+                    grid-area: status;
+
+                    font-weight: 500;
+                    line-height: 1.1;
+
+                    &.invited {
+                        font-size: 0.9rem;
+                    }
+                }
+
+                .access_level {
+                    grid-area: access;
+
+                    font-size: 0.9rem;
+                    line-height: 1.1;
+                }
+            }
+
+            .separator {
+                display: flex;
+                justify-content: flex-end;
+
+                margin: 0.25rem 0 2rem;
+            }
+        }
+    }
+}
+
+@media (max-width: 32rem) {
+    .body_div {
+        .main_div {
+            padding: 2rem 1rem;
+            border-radius: 1rem;
+
+            width: 95svw;
+
+            .depts_div {
+                .dept_div {
+                    .dept_name {
+                        word-wrap: break-word;
+                    }
+                    .users {
+                        margin-left: 1rem;
+
+                        .user_div {
+                            padding: 0.3rem 1rem;
+                            word-wrap: break-word;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

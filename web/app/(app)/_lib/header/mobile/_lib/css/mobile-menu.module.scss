@@ -1,0 +1,53 @@
+.header_menu {
+    position: absolute;
+
+    z-index: 100000;
+    bottom: 3rem;
+    left: 0;
+
+    display: flex;
+    justify-content: space-between;
+    row-gap: 2rem;
+    flex-wrap: wrap;
+
+    padding: 1rem 2rem;
+    border-top-right-radius: 1rem;
+    border-top-left-radius: 1rem;
+
+    background-color: #edf1f5;
+    box-shadow: 0 -0.1rem 1rem #0000001a;
+
+    overflow: hidden;
+    width: 100vw;
+    box-sizing: border-box;
+}
+
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #afafaf57;
+    height: calc(100vh - 10rem);
+    width: 100vw;
+    box-sizing: border-box;
+
+    z-index: 1;
+}
+
+@media (display-mode: standalone) {
+    .header_menu {
+        bottom: 5rem;
+    }
+}
+
+@media (max-width: 22rem) {
+    .header_menu {
+        padding: 1rem;
+    }
+}
+
+@supports (height: 100svh) {
+    .backdrop {
+        height: calc(100svh - 10rem);
+    }
+}

@@ -1,0 +1,15 @@
+.away_link {
+    display: flex;
+    gap: 0.3rem;
+    color: #474747;
+
+    &:hover {
+        .text {
+            text-decoration: underline;
+        }
+    }
+
+    .icon {
+        font-size: 1.2rem;
+    }
+}

@@ -1,0 +1,122 @@
+.body_div {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+
+    width: 100%;
+
+    .main_div {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 1rem;
+
+        margin: 2rem 0;
+
+        width: clamp(20rem, 90%, 50rem);
+        background-color: var(--main_white);
+        box-sizing: border-box;
+
+        padding: 2rem 2rem;
+        border-radius: 1rem;
+
+        .depts_div {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+
+            width: 100%;
+
+            .dept_div {
+                display: flex;
+                flex-direction: column;
+                gap: 0.3rem;
+
+                background-color: var(--darker1);
+
+                padding: 0.3rem 1rem;
+                border-radius: 0.5rem;
+
+                &:hover {
+                    cursor: pointer;
+                    background-color: var(--darker2);
+                }
+
+                .department_name {
+                    font-size: 1.1rem;
+                    line-height: 1.1;
+                    font-weight: 500;
+                    color: #444444;
+
+                    word-wrap: break-word;
+                    word-break: break-word;
+                    overflow-wrap: break-word;
+
+                    /*    max-width: 100%; */
+                }
+
+                .dept_info {
+                    display: grid;
+                    grid-template-columns: 8rem auto;
+                    gap: 2rem;
+
+                    margin-left: 1rem;
+                    font-size: 0.9rem;
+
+                    .color {
+                        display: flex;
+                        align-items: center;
+
+                        .color_title {
+                            width: 8rem;
+                        }
+                        .color_box {
+                            width: 7rem;
+                            height: 1rem;
+                            border-radius: 0.3rem;
+                        }
+                    }
+                }
+            }
+        }
+
+        .info_div {
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+
+            font-size: 0.9rem;
+            line-height: 1;
+
+            font-weight: 500;
+            color: #242424;
+
+            .users_link {
+                width: fit-content;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 36rem) {
+    .body_div {
+        .main_div {
+            width: 95svw;
+            padding: 1rem;
+
+            .depts_div {
+                .dept_div {
+                    .dept_info {
+                        display: grid;
+                        grid-template-columns: auto;
+                        gap: 0.5rem;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,45 @@
+.header_menu {
+    position: absolute;
+
+    z-index: 100000;
+    top: 3rem;
+
+    display: flex;
+    gap: 3rem;
+    flex-wrap: wrap;
+
+    padding: 1rem 2rem;
+    border-bottom-right-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+
+    background-color: #edf1f5;
+    box-shadow: 0 0.5rem 1rem #0000001a;
+
+    .menu_column {
+        display: flex;
+        flex-direction: column;
+        gap: 0.4rem;
+
+        .menu_header {
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        .menu_link {
+            font-size: 0.9rem;
+            font-weight: 450;
+            color: #272727;
+
+            &:hover {
+                text-decoration: underline;
+            }
+
+            &.active {
+                text-decoration: underline;
+                text-decoration-color: #2d98f5;
+                text-decoration-thickness: 0.1rem;
+                color: black;
+            }
+        }
+    }
+}

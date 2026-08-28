@@ -1,0 +1,36 @@
+@use "./../../../../../../css/sass.module" as *;
+
+.button_div {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+
+    margin-bottom: 1rem;
+
+    .switch_button {
+        display: flex;
+        align-items: center;
+        gap: 0.2rem;
+
+        height: fit-content;
+        padding: 0.4rem 0.6rem;
+        border-radius: 0.4rem;
+
+        @extend .empty_button;
+
+        background-color: #a3d3ff;
+        color: #252525;
+
+        .icon {
+            font-size: 1.4rem;
+        }
+
+        .button_text {
+            font-size: 0.9rem;
+            line-height: 1.1;
+            font-weight: 450;
+
+            width: min-content;
+        }
+    }
+}

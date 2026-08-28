@@ -1,0 +1,101 @@
+@use "./../../../../../../css/buttons.module" as *;
+
+.main_div {
+    > form {
+        display: contents;
+    }
+
+    cursor: auto;
+
+    display: grid;
+    grid-template-areas:
+        "left right"
+        "e button";
+    grid-template-columns: 20rem auto;
+
+    column-gap: 4rem;
+    row-gap: 1rem;
+
+    padding: 2rem 2rem 1rem;
+    background-color: var(--main_white);
+    border-radius: 1rem;
+
+    .left_div {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 1rem;
+
+        grid-area: left;
+
+        .user {
+            .select_all {
+                @extend .bold_text_button;
+                color: var(--input_border);
+                font-size: 0.9rem;
+
+                margin-bottom: 0.5rem;
+            }
+
+            .users_list {
+                > div:nth-child(2) {
+                    max-height: 10rem;
+                }
+            }
+
+            /* :global(.objects_div) {
+                max-height: 10rem !important;
+            } */
+        }
+
+        .checkbox {
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+
+            .text {
+                font-size: 0.9rem;
+                line-height: 1rem;
+            }
+        }
+    }
+
+    .right_div {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+
+        grid-area: right;
+
+        .dates {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+    }
+
+    .button {
+        grid-area: button;
+
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+    }
+}
+
+.header {
+    @extend .header;
+}
+
+@media (max-width: 48rem) {
+    .main_div {
+        grid-template-areas:
+            "left"
+            "right"
+            "button";
+        grid-template-columns: 20rem;
+        row-gap: 1rem;
+
+        padding: 1rem;
+    }
+}

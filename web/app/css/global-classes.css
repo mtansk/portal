@@ -1,0 +1,41 @@
+.form_header {
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 0.3rem 0.6rem;
+    background-color: var(--darker1);
+    border-radius: 0.5rem;
+}
+
+@media (max-width: 42rem) {
+    .hides_after_42rem_do_not_change {
+        display: none !important;
+    }
+}
+
+@media (max-width: 52rem) {
+    .hides_after_52rem_do_not_change {
+        display: none !important;
+    }
+}
+
+.spinner {
+    width: 1.5rem;
+    height: 1.5rem;
+    border: 0.2rem solid #0000001a;
+    border-top: 0.2rem solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* INPUTS */

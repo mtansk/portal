@@ -1,0 +1,26 @@
+@use "./../../../../../../css/sass.module" as *;
+
+.badges_div {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+
+    .badge_link {
+        width: fit-content;
+
+        .badge {
+            @extend .empty_button;
+
+            color: gray;
+            font-size: 2.5rem;
+
+            transition: all 0.2s;
+
+            &:hover {
+                color: black;
+                text-decoration: underline;
+                text-decoration-thickness: 0.1rem;
+            }
+        }
+    }
+}

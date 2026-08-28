@@ -1,0 +1,149 @@
+@use "./../../../../css/sass.module" as *;
+@use "./../../../../css/buttons.module" as *;
+
+.main_div {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: space-between;
+
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+
+    background-color: var(--main_white);
+
+    cursor: auto;
+
+    height: 90svh;
+    min-height: 30rem;
+
+    word-wrap: break-word;
+
+    .header {
+        font-size: 1.4rem;
+        height: 2.5rem;
+    }
+
+    .body {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        max-height: calc(90svh - 8rem);
+        overflow-x: auto;
+        overflow-y: auto;
+        scrollbar-width: thin;
+
+        scrollbar-gutter: stable;
+
+        .search {
+            margin-left: 2rem;
+        }
+
+        .month_div {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+
+            .month_header {
+                font-size: 1rem;
+                line-height: 1;
+
+                font-weight: 500;
+
+                color: #474747;
+            }
+        }
+    }
+
+    .buttons {
+        height: 3rem;
+    }
+}
+
+.month_body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+
+    margin-left: 2rem;
+    margin-right: 1rem;
+
+    .payslip_button {
+        @extend .empty_button;
+
+        display: grid;
+        grid-template-areas:
+            "period e radio"
+            "name date radio";
+
+        grid-template-columns: minmax(0, 1fr) 6rem 2rem;
+
+        width: clamp(16rem, 70svw, 25rem);
+        padding: 0.3rem 0.5rem 0.3rem 2rem;
+        box-sizing: border-box;
+        border-radius: 0.4rem;
+        border: 0.1rem solid transparent;
+
+        background-color: var(--darker1);
+
+        font-size: 0.9rem;
+
+        transition: all 0.1s;
+
+        &:hover {
+            background-color: var(--darker2);
+        }
+
+        &.selected {
+            background-color: var(--main_white);
+            border-color: var(--input_border);
+            box-shadow: inset 0 0 0 0.04rem #0969da;
+        }
+
+        .name {
+            grid-area: name;
+            font-weight: 500;
+            line-height: 1.2;
+        }
+
+        .date {
+            grid-area: date;
+            display: flex;
+            justify-content: center;
+        }
+
+        .radio {
+            grid-area: radio;
+        }
+
+        .period {
+            grid-area: period;
+            font-size: 0.8rem;
+            color: #474747;
+        }
+    }
+}
+
+@media (max-width: 36rem) {
+    .main_div {
+        padding: 1rem;
+        width: 95svw;
+        box-sizing: border-box;
+
+        .header {
+            margin-right: 1rem;
+        }
+    }
+
+    .month_body {
+        margin: 0;
+        .payslip_button {
+            padding: 0.3rem 0.3rem 0.3rem 0.4rem;
+
+            box-sizing: border-box;
+            width: 100%;
+        }
+    }
+}

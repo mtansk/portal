@@ -1,0 +1,81 @@
+.body_div {
+    display: flex;
+    justify-content: center;
+
+    flex-grow: 1;
+    background-color: var(--main_white);
+
+    .main_div {
+        display: flex;
+        flex-direction: column;
+
+        width: clamp(20rem, 95svw, 40rem);
+        box-sizing: border-box;
+        margin: 2rem 0;
+        padding: 1rem;
+        border-radius: 1rem;
+
+        line-height: 1.1;
+
+        a {
+            color: #2351b3;
+            font-weight: 450;
+        }
+
+        .logo {
+            margin-top: 1rem;
+            display: flex;
+            justify-content: center;
+
+            .logo_image {
+                width: 10rem;
+                height: auto;
+            }
+        }
+
+        .header {
+            margin-top: 4rem;
+
+            font-size: 2rem;
+            font-weight: 500;
+        }
+
+        .thank {
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+            font-weight: 450;
+            color: #5e5e5e;
+
+            text-align: justify;
+        }
+
+        .learn {
+            margin-top: 2rem;
+
+            font-weight: 400;
+            text-align: justify;
+        }
+
+        .steps {
+            margin-top: 2rem;
+
+            font-weight: 400;
+            text-align: justify;
+        }
+
+        .app {
+            margin-top: 2rem;
+
+            font-size: 1.1rem;
+            font-weight: 450;
+            text-align: justify;
+        }
+
+        .button_div {
+            display: flex;
+            justify-content: flex-end;
+
+            margin-top: 2rem;
+        }
+    }
+}

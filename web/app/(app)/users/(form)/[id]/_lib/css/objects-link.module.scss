@@ -1,0 +1,21 @@
+.objects_link {
+    display: flex;
+    flex-direction: column;
+
+    padding: 0.3rem 0.5rem;
+
+    background-color: var(--darker1);
+    border-radius: 0.4rem;
+
+    color: #303030;
+
+    &:hover {
+        .title {
+            text-decoration: underline;
+        }
+    }
+
+    .icon {
+        font-size: 1.4rem;
+    }
+}

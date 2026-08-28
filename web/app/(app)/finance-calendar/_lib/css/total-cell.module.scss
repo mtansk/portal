@@ -1,0 +1,89 @@
+.total_cell {
+	display: flex;
+	flex-shrink: 1;
+	align-items: center;
+	justify-content: center;
+
+	box-sizing: border-box;
+	width: 100%;
+	height: 100%;
+
+	font-weight: 500;
+
+	border-radius: 0.3rem;
+
+	padding: 0 0.1rem;
+	/* margin: 0 0.1rem; */
+
+	&.add {
+		&.new {
+			background-color: var(--n_b);
+		}
+
+		&.old {
+			background-color: var(--darker2);
+		}
+	}
+
+	&.accruals {
+		background-color: #d5f3c69c;
+	}
+
+	&.reductions {
+		background-color: #f3b5b59c;
+	}
+
+	&.payments {
+		background-color: #bfc9f59c;
+	}
+
+	/* 
+		&.accruals {
+		background-color: #e3f3db9c;
+	}
+	&.reductions {
+		background-color: #f3dbdb9c;
+	}
+
+	&.payments {
+		background-color: #dbdbf39c;
+	} */
+}
+.inner {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.row_total {
+	display: flex;
+	flex-grow: 1;
+	align-items: center;
+	justify-content: flex-end;
+
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+
+	font-size: 0.9rem;
+	font-weight: 500;
+	padding: 0 0.1rem 0 0.2rem;
+
+	color: #6d6d6d;
+}
+
+.column_total {
+	display: flex;
+	flex-grow: 1;
+	align-items: center;
+	justify-content: center;
+
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+
+	font-size: 0.9rem;
+	font-weight: 500;
+	padding: 0 0.1rem 0 0.2rem;
+
+	color: #6d6d6d;
+}

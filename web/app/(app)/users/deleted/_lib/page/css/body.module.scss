@@ -1,0 +1,111 @@
+.body_div {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+
+    width: 100%;
+
+    .main_div {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 1rem;
+
+        margin: 2rem 0;
+
+        width: clamp(20rem, 90%, 50rem);
+        box-sizing: border-box;
+        background-color: var(--main_white);
+
+        padding: 2rem 2rem;
+        border-radius: 1rem;
+
+        .users {
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+
+            .user_div {
+                display: grid;
+                grid-template-areas:
+                    "dept deleted"
+                    "name deleted"
+                    "title deleted";
+                grid-template-columns: auto 8rem;
+
+                background-color: var(--darker1);
+                border-radius: 0.4rem;
+
+                padding: 0.3rem 1rem;
+
+                transition: all 0.2s;
+
+                &:hover {
+                    cursor: pointer;
+                    background-color: var(--darker2);
+                }
+
+                .dept {
+                    grid-area: dept;
+
+                    font-size: 0.9rem;
+                    line-height: 1.1;
+                    color: #585858;
+                }
+
+                .name {
+                    grid-area: name;
+
+                    font-weight: 500;
+                    line-height: 1.1;
+                }
+
+                .title {
+                    grid-area: title;
+
+                    font-size: 0.9rem;
+                    line-height: 1.1;
+                }
+
+                .deleted {
+                    grid-area: deleted;
+
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    font-size: 0.9rem;
+                    line-height: 1.1;
+                    color: var(--main_red);
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 32rem) {
+    .body_div {
+        .main_div {
+            padding: 1rem;
+            border-radius: 1rem;
+
+            width: 95svw;
+
+            .depts_div {
+                .dept_div {
+                    .dept_name {
+                        word-wrap: break-word;
+                    }
+                    .users {
+                        margin-left: 1rem;
+
+                        .user_div {
+                            padding: 0.3rem 1rem;
+                            word-wrap: break-word;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,68 @@
+@use "./../../../../css/sass.module" as *;
+@use "./../../../../css/buttons.module" as *;
+
+.input_div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    width: 16rem;
+    box-sizing: border-box;
+
+    .select_button {
+        @extend .bold_text_button;
+
+        color: var(--input_border);
+        font-size: 1rem;
+    }
+
+    .main_div {
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
+
+        max-height: 25rem;
+        overflow-y: auto;
+        scrollbar-width: thin;
+        scrollbar-gutter: stable;
+
+        word-wrap: break-word;
+
+        .user_div {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) 2rem;
+
+            padding: 0.2rem 0.2rem 0.2rem 0.5rem;
+            border: 0.1rem solid var(--darker3);
+            border-radius: 0.4rem;
+
+            .button_div {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .button {
+                    @extend .empty_button;
+
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    font-size: 1.2rem;
+                    width: 1.5rem;
+                    color: #6b6b6b;
+
+                    transition: all 0.1s linear;
+                    border-radius: 0.4rem;
+                    background-color: var(--darker1);
+
+                    &:hover {
+                        background-color: var(--darker2);
+
+                        color: black;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,65 @@
+.main_div {
+    display: grid;
+    grid-template-columns: 20rem auto 20rem;
+    column-gap: 4rem;
+
+    .left_div {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .middle_div {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        .checkbox {
+            width: fit-content;
+            div:nth-child(2) {
+                width: min-content;
+                line-height: 1;
+            }
+        }
+
+        .to_be_paid {
+            flex-grow: 1;
+            width: 11rem;
+            text-align: right;
+            font-size: 1.2rem;
+            line-height: 1;
+        }
+    }
+    .reductions_div {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        .note {
+            font-size: 0.9rem;
+            line-height: 1.1;
+            color: #585858;
+        }
+    }
+}
+
+@media (max-width: 77rem) {
+    .main_div {
+        display: grid;
+        grid-template-columns: 20rem;
+        row-gap: 3rem;
+
+        .left_div {
+        }
+        .middle_div {
+            align-items: flex-end;
+            .checkbox {
+                div:nth-child(2) {
+                }
+            }
+
+            .to_be_paid {
+            }
+        }
+        .reductions_div {
+        }
+    }
+}

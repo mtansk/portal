@@ -1,0 +1,149 @@
+.schedule_header {
+    display: flex;
+    justify-content: center;
+
+    background-color: var(--darker1);
+    min-height: 5rem;
+    height: auto;
+
+    flex-shrink: 0;
+
+    .main_schedule_header {
+        display: grid;
+        grid-template-areas: "title left_button e options period";
+        grid-template-columns: auto auto 1fr auto auto;
+        &.adding {
+            grid-template-areas: "title left_button e options right_buttons period" !important;
+            grid-template-columns: auto auto 1fr auto auto auto !important;
+        }
+
+        column-gap: 2rem;
+        align-items: center;
+
+        box-sizing: border-box;
+        margin: 1rem 2rem;
+        width: clamp(30rem, 90%, 90rem);
+
+        .title {
+            grid-area: title;
+
+            font-size: 1.5rem;
+            line-height: 1;
+        }
+
+        .left_button {
+            grid-area: left_button;
+        }
+
+        .options {
+            grid-area: options;
+
+            display: flex;
+            gap: 1rem;
+
+            select {
+                border-color: transparent;
+            }
+
+            .dept_filter {
+                select {
+                    width: 14rem;
+                }
+            }
+
+            .multiplier {
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+
+                font-size: 0.9rem;
+                line-height: 0.9rem;
+
+                padding: 0.1rem 1rem;
+                border-radius: 0.4rem;
+
+                background-color: var(--main_white);
+
+                > .text {
+                    width: min-content;
+                }
+            }
+        }
+
+        .right_buttons {
+            grid-area: right_buttons;
+
+            display: flex;
+            gap: 1rem;
+        }
+
+        .period {
+            grid-area: period;
+        }
+    }
+}
+
+@media (max-width: 80rem) {
+    .schedule_header {
+        .main_schedule_header {
+            grid-template-areas:
+                "title e1 period"
+                "left_button e2 options";
+            grid-template-columns: auto 1fr auto;
+            row-gap: 0.5rem;
+            width: 95svw;
+            column-gap: 1rem;
+
+            &.adding {
+                grid-template-areas:
+                    "title e1 period period"
+                    "left_button e2 options right_buttons" !important;
+                grid-template-columns: auto 1fr auto auto !important;
+            }
+
+            .options {
+                flex-wrap: wrap;
+                gap: 0.5rem;
+            }
+
+            .period {
+                display: flex;
+                justify-content: flex-end;
+            }
+        }
+    }
+}
+
+@media (max-width: 45rem) {
+    .schedule_header {
+        .main_schedule_header {
+            grid-template-areas:
+                "title"
+                "period"
+                "options"
+                "left_button";
+            grid-template-columns: auto;
+            row-gap: 1rem;
+            width: 95svw;
+
+            &.adding {
+                grid-template-areas:
+                    "title"
+                    "period"
+                    "options"
+                    "left_button"
+                    "right_buttons" !important;
+                grid-template-columns: auto !important;
+            }
+
+            .options {
+                flex-wrap: wrap;
+                gap: 0.5rem;
+            }
+
+            .period {
+                justify-content: flex-start;
+            }
+        }
+    }
+}

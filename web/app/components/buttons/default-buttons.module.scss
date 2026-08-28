@@ -1,0 +1,188 @@
+@use "./../../css/buttons.module" as *;
+
+.filled {
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1;
+
+    padding: 0.5rem 0.5rem;
+
+    border: none;
+    border-radius: 0.5rem;
+
+    height: 2rem;
+    box-sizing: border-box;
+
+    transition:
+        background-color 0.2s linear,
+        color 0.2s linear;
+
+    &:hover:enabled {
+        cursor: pointer;
+        box-shadow: 1px 1px 5px 0px #c9c9c9;
+        transition: box-shadow 0s;
+    }
+
+    &:disabled {
+        cursor: default;
+        background-color: #d1d1d1;
+        color: #575757;
+    }
+}
+
+.submit-gray {
+    background-color: #868686;
+    color: #a3d3ff;
+
+    &:hover:enabled {
+        background-color: var(--n_b);
+        color: #00044d;
+    }
+}
+
+.filled-gray {
+    color: #7e7e7e;
+
+    &:hover {
+        color: #252525;
+        background-color: var(--darker2);
+
+        &:disabled {
+            color: #7e7e7e;
+        }
+    }
+}
+
+.bold {
+    @extend .bold_text_button;
+    height: 2rem;
+    font-size: 1rem;
+    line-height: 1.1;
+}
+
+.bold-blue {
+    color: var(--input_border);
+}
+
+.bold-red {
+    font-size: 1rem;
+    line-height: 1.1;
+    color: var(--red_button);
+}
+
+.delete_button {
+    @extend .empty_button;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    height: 2rem;
+    padding: 0 0.2rem;
+    border-radius: 1rem !important;
+
+    color: #dd6262;
+
+    transition: all 0.1s linear !important;
+
+    .icon {
+        font-size: 1.5rem;
+    }
+
+    &:hover {
+        color: var(--red_button);
+        background-color: var(--darker1);
+    }
+}
+
+.nav {
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1;
+
+    padding: 0.5rem 0.5rem;
+    width: fit-content;
+
+    border: none;
+    border-radius: 0.5rem;
+
+    box-sizing: border-box;
+
+    transition:
+        background-color 0.2s linear,
+        color 0.2s linear;
+
+    &:hover:enabled {
+        cursor: pointer;
+        box-shadow: 1px 1px 5px 0px #c9c9c9;
+        transition: box-shadow 0s;
+    }
+
+    &:disabled {
+        cursor: default;
+        background-color: #d1d1d1;
+        color: #575757;
+    }
+}
+
+.nav-blue {
+    background-color: #a3d3ff;
+    color: #252525;
+}
+
+.nav-purple {
+    background-color: #e7d3f3;
+    color: #252525;
+}
+
+.buy-pink {
+    background: linear-gradient(
+        90deg,
+        #c1b7fa91 0%,
+        #f0bcebc9 50%,
+        #b7c8fa 100%
+    );
+    font-weight: 500;
+    color: #000000;
+}
+
+.spinner {
+    width: 2rem;
+    height: 2rem;
+    border: 0.2rem solid #0000001a;
+    border-top: 0.2rem solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+
+    box-sizing: border-box;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.buy-pink-anim {
+    background: linear-gradient(90deg, #c1acff 0%, #ffa4da 50%, #97b8ff 100%);
+    font-weight: 500;
+    color: #000000;
+    background-size: 200% 200%;
+    animation: gradientShift 3s ease infinite;
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}

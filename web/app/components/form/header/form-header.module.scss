@@ -1,0 +1,23 @@
+.form_header {
+    .title {
+        display: flex;
+    }
+
+    &.header_like {
+        font-size: 0.9rem;
+        font-weight: 500;
+        padding: 0.3rem 0.6rem;
+        background-color: var(--darker1);
+        border-radius: 0.5rem;
+        height: fit-content;
+    }
+
+    &.input_like {
+        font-size: 0.9rem;
+        color: #686868;
+        font-weight: 500;
+
+        display: flex;
+        justify-content: flex-start;
+    }
+}

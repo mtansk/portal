@@ -1,0 +1,108 @@
+.user_div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+
+    padding: 0.25rem 0.5rem;
+    background-color: var(--main_white);
+    border-radius: 0.5rem;
+
+    word-break: break-word;
+
+    .main_div {
+        display: grid;
+        grid-template-areas:
+            "arrow name deleted total"
+            "e1 title deleted total";
+        grid-template-columns: 2rem auto 2rem 8rem;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        .arrow {
+            grid-area: arrow;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 1.2rem;
+            line-height: 1;
+            color: #464646;
+        }
+
+        .name {
+            grid-area: name;
+
+            font-size: 1rem;
+            line-height: 1.1;
+            font-weight: 500;
+        }
+
+        .title {
+            grid-area: title;
+
+            font-size: 0.9rem;
+            line-height: 1.1;
+            color: #5a5a5a;
+        }
+
+        .deleted_icon {
+            grid-area: deleted;
+
+            display: flex;
+            justify-content: center;
+
+            font-size: 1.4rem;
+            line-height: 1;
+            color: #464646;
+        }
+
+        .total {
+            grid-area: total;
+
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+
+            font-size: 1rem;
+            line-height: 1.1;
+            font-weight: 500;
+        }
+    }
+}
+
+@media (max-width: 54rem) {
+    .user_div {
+        display: flex;
+        flex-direction: column;
+        gap: 0.6rem;
+
+        padding: 0.6rem 0.4rem;
+        background-color: var(--main_white);
+        border-radius: 0.5rem;
+
+        .main_div {
+            display: grid;
+            grid-template-areas: "arrow name deleted total";
+            grid-template-columns: 2rem minmax(0, 1fr) 2rem 8rem;
+
+            max-width: 100%;
+
+            margin-right: 0.4rem;
+
+            .name {
+                grid-area: name;
+
+                font-size: 1rem;
+                line-height: 1.1;
+                font-weight: 500;
+            }
+
+            .title {
+                display: none;
+            }
+        }
+    }
+}

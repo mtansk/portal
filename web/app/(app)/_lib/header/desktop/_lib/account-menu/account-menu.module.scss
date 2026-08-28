@@ -1,0 +1,36 @@
+@use "./../../../../../css/sass.module" as *;
+
+.account_menu {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    justify-content: flex-end;
+    align-items: flex-end;
+
+    position: absolute;
+
+    z-index: 100000;
+    top: 3rem;
+    right: 0;
+
+    border-bottom-right-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+
+    background-color: #edf1f5;
+    box-shadow: 0 0.5rem 1rem #0000001a;
+
+    padding: 0.6rem 0.4rem 1rem 2rem;
+
+    .button {
+        @extend .empty_button;
+
+        display: flex;
+        font-weight: 500;
+
+        color: #6d6d6d;
+
+        &:hover {
+            color: #000000;
+        }
+    }
+}

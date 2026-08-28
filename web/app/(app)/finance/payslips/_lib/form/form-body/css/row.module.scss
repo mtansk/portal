@@ -1,0 +1,118 @@
+.group_row {
+    display: grid;
+    grid-template-areas: "title det total";
+    grid-template-columns: 2fr 1fr 1fr;
+
+    padding: 0 2rem 0 1rem;
+
+    .title {
+        font-weight: 500;
+    }
+
+    .details {
+        color: #585858;
+    }
+}
+
+.list_item_row {
+    display: grid;
+    grid-template-areas:
+        "group det rem"
+        "name total rem";
+    grid-template-columns: 2fr 1fr 2rem;
+    column-gap: 0.2rem;
+
+    .group {
+        grid-area: group;
+        overflow-wrap: anywhere;
+
+        font-size: 0.9rem;
+
+        line-height: 0.9rem;
+        color: #494949;
+    }
+
+    .name {
+        grid-area: name;
+        line-height: 1;
+
+        overflow-wrap: anywhere;
+
+        a {
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .details {
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+
+        font-size: 0.8rem;
+        line-height: 0.9rem;
+        color: #5a5a5a;
+
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+
+    .total {
+        grid-area: total;
+    }
+
+    .rem {
+        grid-area: rem;
+
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+
+        user-select: none;
+        > div {
+            font-size: 1.2rem;
+
+            color: #585858;
+            border-radius: 0.2rem;
+
+            transition: all 0.1s ease-in-out;
+
+            &:hover {
+                cursor: pointer;
+                color: black;
+                background-color: var(--darker2);
+            }
+        }
+    }
+}
+
+.total {
+    display: flex;
+    justify-content: flex-end;
+
+    font-weight: 500;
+
+    &.accrual,
+    &.sheet {
+        color: var(--m_green);
+    }
+
+    &.reduction {
+        color: var(--m_red);
+    }
+
+    &.payment {
+        color: var(--m_blue);
+    }
+
+    &.tax {
+        /* color: var(--m_orange); */
+        color: var(--m_gray);
+    }
+
+    &.taxDeduction,
+    &.socialFee {
+        color: var(--m_gray);
+    }
+}

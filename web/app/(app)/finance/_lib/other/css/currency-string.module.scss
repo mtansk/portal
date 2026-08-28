@@ -1,0 +1,38 @@
+.string_div {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+
+    .icon {
+        font-size: 1.2em;
+        color: #8d8d8d;
+        height: fit-content;
+    }
+
+    .string_text {
+        white-space: nowrap;
+        &.colored {
+            &.payment {
+                color: var(--m_blue);
+            }
+
+            &.reduction {
+                color: var(--m_red);
+            }
+
+            &.accrual {
+                color: var(--m_green);
+            }
+
+            &.sheet {
+                color: var(--m_green);
+            }
+        }
+    }
+
+    .payment_currency_string {
+        display: flex;
+        align-items: center;
+        white-space: nowrap;
+    }
+}

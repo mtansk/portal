@@ -1,0 +1,209 @@
+.main_div {
+    padding: 1rem 2rem;
+    background-color: var(--main_white);
+    border-radius: 1rem;
+
+    cursor: auto;
+
+    max-height: 85svh;
+    /*     min-width: 35rem; */
+
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    .header {
+        font-size: 1.4rem;
+    }
+
+    .body {
+        display: flex;
+        flex-direction: column;
+        gap: 0.4rem;
+
+        flex-grow: 1;
+        overflow-x: auto;
+        scrollbar-width: thin;
+        scrollbar-color: var(--darker3) var(--main_white);
+
+        min-height: 40svh;
+        width: 30rem;
+
+        .date_block {
+            display: flex;
+            flex-direction: column;
+            gap: 0.2rem;
+
+            .block_header {
+                font-size: 0.9rem;
+                font-weight: 500;
+                color: #5a5a5a;
+            }
+
+            .block_body {
+                display: flex;
+                flex-direction: column;
+                gap: 0.4rem;
+            }
+        }
+    }
+}
+
+.list_item_row {
+    display: grid;
+    grid-template-areas:
+        "group det rem"
+        "name total rem";
+    grid-template-columns: minmax(0, 1fr) 7rem 2rem;
+
+    /* 
+            
+            */
+    background-color: var(--darker1);
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.4rem;
+
+    border: 0.15rem solid transparent;
+
+    &:hover {
+        cursor: pointer;
+        background-color: var(--darker2);
+    }
+
+    &.selected {
+        border-color: var(--n_b);
+        background-color: var(--main_white);
+    }
+
+    .group {
+        grid-area: group;
+
+        font-size: 0.9rem;
+
+        line-height: 0.9rem;
+        color: #494949;
+    }
+
+    .name {
+        grid-area: name;
+        line-height: 1;
+
+        overflow-wrap: anywhere;
+    }
+
+    .details {
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+
+        white-space: nowrap;
+        text-overflow: ellipsis;
+
+        font-size: 0.8rem;
+        line-height: 0.9rem;
+        color: #5a5a5a;
+    }
+
+    .total {
+        grid-area: total;
+    }
+
+    .total {
+        display: flex;
+        justify-content: flex-end;
+
+        font-weight: 500;
+
+        &.accrual,
+        &.sheet {
+            color: var(--m_green);
+        }
+
+        &.reduction {
+            color: var(--m_red);
+        }
+
+        &.payment {
+            color: var(--m_blue);
+        }
+
+        &.tax {
+            /* color: var(--m_orange); */
+            color: var(--m_gray);
+        }
+
+        &.taxDeduction,
+        &.socialFee {
+            color: var(--m_gray);
+        }
+    }
+
+    .rem {
+        grid-area: rem;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        user-select: none;
+        > div {
+            font-size: 1.2rem;
+
+            color: #585858;
+            border-radius: 0.2rem;
+
+            transition: all 0.1s ease-in-out;
+
+            &:hover {
+                cursor: pointer;
+                color: black;
+                background-color: var(--darker2);
+            }
+        }
+    }
+}
+
+@media (max-width: 38rem) {
+    .main_div {
+        padding: 1rem;
+        max-height: 90svh;
+
+        width: 90svw;
+
+        .header {
+        }
+
+        .body {
+            width: 100%;
+            box-sizing: border-box;
+
+            .date_block {
+                .block_header {
+                }
+
+                .block_body {
+                }
+            }
+        }
+    }
+
+    .list_item_row {
+        .group {
+        }
+
+        .name {
+        }
+
+        .details {
+        }
+
+        .total {
+        }
+
+        .total {
+        }
+
+        .rem {
+        }
+    }
+}

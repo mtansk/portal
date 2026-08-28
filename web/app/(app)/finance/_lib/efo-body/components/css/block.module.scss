@@ -1,0 +1,279 @@
+.object_div {
+    display: grid;
+    grid-template-columns: minmax(0, 3fr) minmax(6rem, 1fr) minmax(10rem, 1fr);
+    grid-template-areas:
+        "user user user"
+        "group e details"
+        "name date total";
+    column-gap: 0.5rem;
+
+    position: relative;
+
+    padding: 0.2rem 1rem;
+    padding-bottom: 0.2rem;
+    border-radius: 0.4rem;
+
+    word-wrap: break-word;
+
+    &:hover {
+        cursor: pointer;
+        background-color: var(--darker1);
+    }
+
+    &:not(.grouped) {
+        background-color: var(--main_white);
+
+        padding: 0.3rem 1rem;
+        border-radius: 0.5rem;
+
+        &:hover {
+            cursor: pointer;
+            background-color: var(--darker2);
+        }
+
+        .user_div {
+            padding-bottom: 0.4rem;
+        }
+
+        .group {
+            line-height: 0.9rem;
+        }
+    }
+
+    &.grouped {
+        grid-template-areas:
+            "group e details"
+            "name date total";
+
+        .date {
+            align-items: flex-start;
+        }
+
+        &:nth-last-child(2) {
+            &::after {
+                height: 0 !important;
+            }
+        }
+
+        &:not(:nth-last-child(2)) {
+            &::after {
+                content: "";
+                position: absolute;
+                bottom: -3px;
+                z-index: 100;
+                left: 0;
+                width: 100%;
+                height: 1px;
+                background-color: #ebebeb;
+            }
+        }
+    }
+
+    .user_div {
+        grid-area: user;
+        .user_name {
+            font-size: 0.9rem;
+            font-weight: 500;
+            line-height: 1rem;
+        }
+
+        .title {
+            font-size: 0.9rem;
+            line-height: 0.9rem;
+            color: #494949;
+            font-style: italic;
+        }
+    }
+
+    .group {
+        font-size: 0.9rem;
+
+        line-height: 0.9rem;
+        color: #494949;
+
+        grid-area: group;
+    }
+
+    .object_name {
+        grid-area: name;
+        line-height: 1.1;
+    }
+
+    .date {
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+
+        grid-area: date;
+    }
+
+    .details {
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+
+        word-break: keep-all;
+        text-wrap: nowrap;
+
+        font-size: 0.8rem;
+        line-height: 0.9rem;
+        color: #5a5a5a;
+        grid-area: details;
+    }
+
+    .total {
+        display: flex;
+        justify-content: flex-end;
+        gap: 0.1rem;
+
+        grid-area: total;
+
+        font-size: 1rem;
+        font-weight: 500;
+        color: #000000;
+
+        .archive {
+            font-size: 1.2rem;
+            color: #6d6d6d;
+        }
+    }
+}
+
+@media (max-width: 54rem) {
+    .object_div {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 7rem;
+
+        &.payment {
+            grid-template-columns: minmax(0, 1fr) 8.5rem;
+        }
+
+        grid-template-areas:
+            "user date"
+            "name total";
+        column-gap: 0.5rem;
+
+        position: relative;
+
+        padding: 0.3rem 0.5rem;
+        border-radius: 0.4rem;
+
+        word-wrap: break-word;
+
+        background-color: var(--darker1);
+
+        &:hover {
+            cursor: pointer;
+            background-color: var(--darker1);
+        }
+
+        &:not(.grouped) {
+            background-color: var(--main_white);
+
+            padding: 0.3rem 1rem;
+            border-radius: 0.5rem;
+
+            &:hover {
+                cursor: pointer;
+                background-color: var(--darker2);
+            }
+
+            .user_div {
+                padding-bottom: 0.4rem;
+            }
+
+            .group {
+                line-height: 0.9rem;
+            }
+        }
+
+        &.grouped {
+            grid-template-areas:
+                "e date"
+                "name  total";
+            column-gap: 0.3rem;
+
+            .date {
+                align-items: flex-start;
+            }
+
+            &:nth-last-child(2) {
+                &::after {
+                    height: 0 !important;
+                }
+            }
+
+            &:not(:nth-last-child(2)) {
+                &::after {
+                    content: "";
+                    position: absolute;
+                    bottom: -6px;
+                    z-index: 100;
+                    left: 0;
+                    width: 100%;
+                    height: 0;
+                    background-color: #d3d3d3;
+                }
+            }
+        }
+
+        .user_div {
+            grid-area: user;
+            .user_name {
+                font-size: 0.9rem;
+                font-weight: 500;
+                line-height: 1rem;
+            }
+
+            .title {
+                display: none;
+            }
+        }
+
+        .group {
+            display: none;
+        }
+
+        .object_name {
+            grid-area: name;
+            line-height: 1;
+            font-size: 0.9rem;
+
+            color: #000000;
+        }
+
+        .date {
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-end;
+
+            grid-area: date;
+
+            font-size: 0.9rem;
+            line-height: 1;
+        }
+
+        .details {
+            display: none;
+        }
+
+        .total {
+            display: flex;
+            justify-content: flex-end;
+            gap: 0.1rem;
+
+            grid-area: total;
+
+            font-size: 1rem;
+            font-weight: 500;
+            color: #000000;
+
+            text-overflow: ellipsis;
+
+            .archive {
+                font-size: 1.2rem;
+                color: #6d6d6d;
+            }
+        }
+    }
+}

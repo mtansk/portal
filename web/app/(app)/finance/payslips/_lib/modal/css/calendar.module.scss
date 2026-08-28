@@ -1,0 +1,24 @@
+.period_calendar {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+
+    .dates {
+        display: flex;
+        height: 1.8rem;
+
+        .date {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            width: 7rem;
+            border-bottom: 0.16rem solid transparent;
+            transition: all 0.3s ease-in-out;
+
+            &.active {
+                border-color: #84b1ec;
+            }
+        }
+    }
+}

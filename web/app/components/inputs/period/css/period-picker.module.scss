@@ -1,0 +1,70 @@
+.period_picker_div {
+    border: 0.05rem solid transparent;
+    border-radius: 0.4rem;
+    background-color: var(--main_white);
+    user-select: none;
+
+    &.shadow:hover {
+        box-shadow: var(--h_sh);
+    }
+
+    &.disabled {
+        opacity: 1;
+        pointer-events: none;
+    }
+
+    transition: all 0.3s ease-in-out;
+
+    width: 18rem;
+    height: fit-content;
+
+    > div {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.6rem;
+
+        padding: 0.2rem 0.5rem;
+
+        background-color: var(--main_white);
+        border-radius: 0.4rem;
+
+        height: 2rem;
+
+        &.custom_period_nav {
+            justify-content: center;
+        }
+
+        > div {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+
+            :global(.icon) {
+                font-size: 1.4rem;
+                color: #727272;
+                transition: all 0.3s ease-in-out;
+            }
+
+            &:hover {
+                :global(.icon) {
+                    color: black;
+                }
+            }
+
+            border-radius: 0.2rem;
+            padding: 0.1rem 0.5rem;
+
+            &.use_modal:hover {
+                cursor: pointer;
+                background-color: var(--darker1);
+            }
+        }
+    }
+}
+
+@media (max-width: 35rem) {
+    .period_picker_div {
+        width: 21rem;
+    }
+}

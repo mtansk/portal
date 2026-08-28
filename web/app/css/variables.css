@@ -1,0 +1,44 @@
+:root {
+
+    /* Colors */
+
+    --main_white: #fefefe;
+    --darker1: #f1f1f1;
+    --darker2: #e4e4e4;
+    --darker3: #bababa;
+
+    --dialog_background: #fcfcfcd9;
+
+
+    --m_green: #5faf49;
+    --m_red: #da6363;
+    --m_orange: #ec700a;
+    --m_gray: #868686;
+    --m_blue: #4295e2;
+
+    --n_b: #a3d3ff;
+    --input_border: #0969da;
+    --red_button: #df2020;
+    --buy_pink: #df22b0;
+
+    --enabled_input_border: #808080;
+
+    /* 
+    
+    
+    */
+
+
+    --header_margin: 6vw;
+
+
+
+
+
+
+
+    /* Shadows */
+
+    --h_sh: 1px 1px 5px 0px #b1b1b1;
+    --ih: "FILL" 1, "wght" 500, "GRAD" 0, "opsz" 24 !important;
+}

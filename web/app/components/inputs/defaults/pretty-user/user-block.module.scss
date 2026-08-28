@@ -1,0 +1,23 @@
+.user_div {
+    display: flex;
+    flex-direction: column;
+    max-width: 16rem;
+    line-height: 1.1;
+
+    word-wrap: break-word;
+
+    .dept {
+        font-size: 1rem;
+        color: #585858;
+    }
+
+    .name {
+        font-size: 1.4rem;
+    }
+
+    .title {
+        font-size: 1rem;
+        font-style: italic;
+        color: #585858;
+    }
+}

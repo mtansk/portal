@@ -1,0 +1,51 @@
+.container {
+    display: flex;
+    justify-content: center;
+
+    .body {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        width: clamp(20rem, 95svw, 40rem);
+
+        margin: 2rem 0;
+
+        .header {
+            font-size: 1.4rem;
+            font-weight: 500;
+
+            margin-left: 2rem;
+        }
+
+        .block {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+
+            padding: 1rem 2rem;
+            border-radius: 0.5rem;
+            background-color: var(--main_white);
+
+            .block_header {
+                font-size: 1.1rem;
+                font-weight: 500;
+            }
+
+            .text {
+                font-size: 1rem;
+                font-weight: 400;
+                line-height: 1.1;
+            }
+
+            .list {
+                list-style-type: disc;
+            }
+
+            .button_div {
+                display: flex;
+                justify-content: flex-end;
+            }
+        }
+    }
+}

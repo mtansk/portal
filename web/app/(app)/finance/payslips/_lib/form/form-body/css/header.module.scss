@@ -1,0 +1,95 @@
+.header_div {
+    display: grid;
+    justify-content: space-between;
+    grid-template-areas: "user e name dates";
+    grid-template-columns: 12rem 1fr 18rem 18rem;
+    column-gap: 2rem;
+
+    .user {
+        display: flex;
+        flex-direction: column;
+
+        .dept {
+            font-size: 1rem;
+            color: #585858;
+        }
+
+        .name {
+            font-size: 1.4rem;
+        }
+
+        .title {
+            font-size: 1rem;
+            font-style: italic;
+        }
+    }
+
+    .header {
+        font-size: 0.9rem;
+        font-weight: 500;
+        padding: 0.3rem 0.6rem;
+        background-color: var(--darker1);
+        border-radius: 0.5rem;
+    }
+
+    .payslip_name {
+        grid-area: name;
+
+        display: flex;
+        flex-direction: column;
+        gap: 0.2rem;
+
+        /*     textarea {
+            font-size: 1.4rem;
+            width: 100%;
+            height: 6rem;
+        } */
+    }
+
+    .dates {
+        grid-area: dates;
+
+        .period {
+            grid-area: period;
+
+            height: min-content;
+            /* 
+            display: flex;
+            flex-direction: column;
+            gap: 0.2rem; */
+            .picker {
+                width: max-content;
+                > div {
+                    justify-content: flex-start;
+                }
+            }
+        }
+
+        .date {
+            grid-area: date;
+
+            display: flex;
+            flex-direction: column;
+            gap: 0.2rem;
+        }
+
+        .text {
+            grid-area: text;
+
+            font-size: 0.9rem;
+            line-height: 1rem;
+            color: #585858;
+        }
+    }
+}
+
+@media (max-width: 77rem) {
+    .header_div {
+        grid-template-areas:
+            "user "
+            "name"
+            "dates";
+        grid-template-columns: auto;
+        row-gap: 2rem;
+    }
+}

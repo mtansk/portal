@@ -1,0 +1,118 @@
+@use "./../../../../css/sass.module.scss" as *;
+/* @use "@/css/sass.module.scss" as *; */
+
+.date_selector_div {
+    &.disabled {
+        pointer-events: none;
+
+        .calendar {
+            border: 0.1rem solid var(--darker2);
+        }
+    }
+
+    .main_div {
+        padding: 0.5rem 1rem;
+
+        border-radius: 0.5rem;
+        border: 0.1rem solid var(--darker3);
+
+        width: min-content;
+        height: 17.2rem;
+
+        user-select: none;
+
+        /*     &:hover {
+            border: 0.1rem solid #808080;
+        } */
+
+        .period_picker_div {
+            display: flex;
+            gap: 1rem;
+
+            .period_picker {
+                font-weight: 500;
+            }
+        }
+
+        .calendar_div {
+            .weekdays {
+                display: flex;
+                gap: 0.2rem;
+                justify-content: space-between;
+
+                .weekday {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 2rem;
+                    height: 1.2rem;
+
+                    border: 0.1rem solid transparent;
+
+                    font-weight: 500;
+
+                    &:nth-last-child(1),
+                    &:nth-last-child(2) {
+                        color: #db2424;
+                    }
+                }
+            }
+
+            .dates {
+                display: flex;
+                flex-direction: column;
+                gap: 0.2rem;
+
+                .week {
+                    display: flex;
+                    gap: 0.2rem;
+                    justify-content: space-between;
+
+                    .day {
+                        @extend .empty_button;
+
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 2rem;
+                        height: 2rem;
+
+                        border: 0.1rem solid transparent;
+                        border-radius: 0.3rem;
+
+                        &:not(.empty) {
+                            &.selected {
+                                background-color: var(--n_b);
+
+                                &:hover {
+                                    background-color: var(--n_b);
+                                }
+                            }
+
+                            &.today {
+                                border: 0.1rem solid #f88888;
+                            }
+
+                            &.disabled_date {
+                                &:not(.selected) {
+                                    background-color: #d3d3d3;
+                                    color: #5e5e5e;
+
+                                    &:hover {
+                                        cursor: default;
+                                        background-color: #d3d3d3;
+                                    }
+                                }
+                            }
+
+                            &:hover {
+                                cursor: pointer;
+                                background-color: var(--darker2);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,162 @@
+.finance_header_div {
+	background-color: var(--darker1);
+	min-height: 5.5rem;
+
+	.main_div {
+		display: grid;
+		grid-template-areas:
+			"title e e1"
+			"nav e period"
+			"add e options";
+		grid-template-columns: auto 1fr auto;
+
+		row-gap: 0.5rem;
+
+		margin: 1rem var(--header_margin) 0.5rem;
+
+		.title {
+			grid-area: title;
+
+			font-size: 1.5rem;
+		}
+
+		.nav {
+			grid-area: nav;
+		}
+
+		.add_div {
+			grid-area: add;
+
+			display: flex;
+			align-items: center;
+			gap: 0.5rem;
+
+			.stripe {
+				width: 1px;
+				height: 2rem;
+				background-color: #afafaf;
+			}
+
+			button {
+				min-width: 10rem;
+			}
+		}
+
+		.options {
+			grid-area: options;
+
+			display: flex;
+			align-items: center;
+			gap: 0.5rem;
+
+			.check {
+				min-width: 1.5rem;
+				background-color: var(--main_white);
+
+				font-size: 0.9rem;
+				line-height: 0.9rem;
+
+				> div {
+					width: min-content;
+				}
+
+				&:hover {
+					box-shadow: var(--h_sh);
+				}
+			}
+
+			.sort {
+				display: flex;
+				align-items: center;
+				gap: 0.25rem;
+
+				background-color: var(--main_white);
+				padding: 0.2rem 0.4rem 0.2rem 0.8rem;
+				border-radius: 0.5rem;
+
+				/* 	&:hover {
+					box-shadow: var(--h_sh);
+				} */
+
+				select {
+					height: fit-content;
+				}
+
+				button {
+					display: flex;
+					align-items: center;
+					font-size: 1.3rem;
+					height: fit-content;
+
+					user-select: none;
+
+					background-color: var(--darker1);
+					padding: 0 0.4rem;
+					border-radius: 0.4rem;
+					border: 0;
+
+					transition: all 0.3s ease-in-out;
+
+					&:hover {
+						cursor: pointer;
+						user-select: none;
+						background-color: #e0e0e0;
+					}
+				}
+			}
+
+			.filter {
+				display: flex;
+				align-items: center;
+				gap: 0.25rem;
+
+				padding: 0.3rem 0.5rem;
+
+				background-color: var(--main_white);
+				border-radius: 0.4rem;
+
+				min-height: 2rem;
+
+				&:hover {
+					box-shadow: var(--h_sh);
+				}
+
+				.icon {
+					font-size: 1.6rem;
+
+					display: flex;
+					align-items: center;
+					justify-content: center;
+
+					width: 1.4rem;
+
+					transition: all 0.3s ease-in-out;
+
+					&.close {
+						cursor: pointer;
+						border-radius: 0.3rem;
+
+						font-size: 1.4rem;
+						color: #4e4e4e;
+
+						&:hover {
+							background-color: var(--darker2);
+						}
+					}
+				}
+
+				input {
+					font-size: 1rem;
+					width: 16rem;
+				}
+			}
+		}
+
+		.period {
+			grid-area: period;
+
+			display: flex;
+			justify-content: flex-end;
+		}
+	}
+}

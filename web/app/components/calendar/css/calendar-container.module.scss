@@ -1,0 +1,150 @@
+@use "calendar-body.module.scss" as *;
+
+.calendar_table_body_div {
+    overflow: hidden;
+    flex-grow: 1;
+    display: flex;
+    user-select: none;
+
+    > .main_div {
+        margin: 1rem 0.5dvw;
+        padding: 1rem 0.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        flex-grow: 1;
+
+        background-color: var(--main_white);
+        border-radius: 1rem;
+
+        box-sizing: border-box;
+        overflow: hidden;
+        position: relative;
+
+        &:fullscreen {
+            > .upper_div {
+                > .button_div {
+                    .open {
+                        display: none;
+                    }
+
+                    .close {
+                        display: flex !important;
+                    }
+                }
+            }
+        }
+
+        .calendar_placeholder {
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            padding: 1rem;
+
+            box-sizing: border-box;
+            width: 100%;
+            height: 100%;
+
+            z-index: 400;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background-color: #ddddddc4;
+
+            font-size: 2rem;
+            font-weight: 500;
+        }
+
+        .loading {
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            box-sizing: border-box;
+            width: 100%;
+            height: 100%;
+
+            z-index: 400;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background-color: #c0c0c060;
+
+            font-size: 2rem;
+            font-weight: 500;
+        }
+
+        .upper_div {
+            display: flex;
+            height: max-content;
+
+            a {
+                color: inherit;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+
+            > .month_div {
+                flex-grow: 1;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .button_div {
+                display: flex;
+                justify-content: flex-end;
+
+                .fullscreen {
+                    font-size: 0.9rem;
+                    box-shadow: none !important;
+
+                    &.close {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        .scrollable {
+            overflow: auto;
+            scrollbar-width: thin;
+            scrollbar-color: var(--darker2) var(--main_white);
+
+            position: relative;
+        }
+
+        .calendar_table {
+            display: grid;
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+}
+
+.dept_div {
+    @extend .dept_div;
+}
+
+@media (max-width: 77rem) {
+    .calendar_table_body_div {
+        overflow: visible;
+
+        height: 80svh;
+        > .main_div {
+            .upper_div {
+                > .button_div {
+                    display: none;
+                }
+            }
+        }
+    }
+}

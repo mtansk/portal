@@ -1,0 +1,77 @@
+@use "./../../../../../../css/buttons.module" as *;
+
+.account_div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+
+    max-width: 20rem;
+
+    .header {
+        font-size: 1.4rem;
+        line-height: 1.1;
+
+        margin-bottom: 0.4rem;
+    }
+
+    .code {
+        font-weight: 500;
+        font-size: 1.2rem;
+    }
+
+    .expires {
+        font-weight: 500;
+        font-size: 0.9rem;
+        color: #808080;
+
+        margin: 0rem 0 1rem;
+    }
+
+    .status_label {
+        font-weight: 500;
+        font-size: 1.2rem;
+        /*      &.active {
+            color: #3e9e12;
+        }
+        &.suspended {
+            color: #d47319;
+        } */
+    }
+
+    .status_info {
+        font-size: 0.9rem;
+        line-height: 1.1;
+        color: #5a5a5a;
+
+        .exceeded {
+            color: #e7561d;
+            font-size: 1rem;
+        }
+    }
+
+    .buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 0.8rem;
+        justify-content: flex-end;
+
+        margin-top: 1rem;
+
+        .good {
+            @extend .bold_blue_button;
+        }
+
+        .bad {
+            @extend .bold_red_button;
+        }
+    }
+
+    .plan {
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+
+        margin-top: 1.5rem;
+    }
+}

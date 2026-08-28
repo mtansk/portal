@@ -1,0 +1,82 @@
+.main_div {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+
+    flex-grow: 1;
+
+    margin-bottom: 4rem;
+    box-sizing: border-box;
+
+    border-radius: 1rem;
+
+    .body_div {
+        display: grid;
+        justify-content: start;
+        grid-template-areas:
+            "accruals taxes"
+            "accruals reductions"
+            "accruals payments"
+            "accruals totals"
+            "accruals e1";
+
+        grid-template-columns: 26rem 26rem;
+
+        column-gap: 6rem;
+        row-gap: 2rem;
+
+        .accruals {
+            grid-area: accruals;
+        }
+
+        .taxes {
+            grid-area: taxes;
+        }
+
+        .reductions {
+            grid-area: reductions;
+        }
+
+        .totals {
+            grid-area: totals;
+        }
+
+        .payments {
+            grid-area: payments;
+        }
+
+        .totals2 {
+            display: none;
+        }
+    }
+}
+
+@media (max-width: 77rem) {
+    .main_div {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        flex-grow: 1;
+
+        margin-bottom: 4rem;
+        box-sizing: border-box;
+
+        width: min(30rem, 95svw);
+
+        .body_div {
+            display: grid;
+            justify-content: start;
+            grid-template-areas:
+                "accruals"
+                "taxes"
+                "reductions"
+                "payments"
+                "totals";
+
+            grid-template-columns: 100%;
+
+            row-gap: 2rem;
+        }
+    }
+}

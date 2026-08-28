@@ -1,0 +1,123 @@
+version: "3.8"
+
+services:
+    traefik:
+        image: traefik:v3.3
+        command:
+            - --entrypoints.web.address=:80
+            - --entrypoints.websecure.address=:443
+            - --api.dashboard=true
+            - --log.level=INFO
+            - --accesslog=true
+            - --providers.swarm.exposedByDefault=false
+            - --providers.swarm.network=proxy
+        ports:
+            - "80:80"
+            - "443:443"
+        deploy:
+            labels:
+                - traefik.enable=true
+            placement:
+                constraints:
+                    - node.role == manager
+        volumes:
+            - /var/run/docker.sock:/var/run/docker.sock
+        networks:
+            - proxy
+
+    php-apache:
+        image: server-prod
+        networks:
+            - backend
+        secrets:
+            - mysql_root_password
+            - jwt_key
+            - refresh_key
+            - auth_key
+            - aes_key
+            - email_password
+        depends_on:
+            - mysql
+            - redis
+
+    node:
+        image: node-prod:latest
+        networks:
+            - proxy
+            - backend
+        deploy:
+            labels:
+                - traefik.enable=true
+                - traefik.http.routers.node.rule=Host(`123.ru`)
+                - traefik.http.routers.my-container.service=node-service
+                - traefik.http.services.node-service.loadbalancer.server.port=3000
+
+    mysql:
+        image: mysql:9.2
+        networks:
+            - backend
+        secrets:
+            - mysql_root_password
+        environment:
+            MYSQL_ROOT_PASSWORD_FILE: /run/secrets/mysql_root_password
+        volumes:
+            - mysql_data:/var/lib/mysql
+        deploy:
+            restart_policy:
+                condition: on-failure
+
+    phpmyadmin:
+        image: phpmyadmin:latest
+        networks:
+            - proxy
+            - backend
+        deploy:
+            labels:
+                - traefik.enable=true
+                - traefik.http.routers.phpmyadmin.rule=Host(`pma.123.ru`)
+                - traefik.http.routers.phpmyadmin.service=pma-service
+                - traefik.http.services.pma-service.loadbalancer.server.port=80
+        environment:
+            PMA_HOST: mysql
+        depends_on:
+            - mysql
+
+    redis:
+        image: redis:latest
+        networks:
+            - backend
+        volumes:
+            - redis_data:/data
+        deploy:
+            restart_policy:
+                condition: on-failure
+
+networks:
+    proxy:
+        name: proxy
+        driver: overlay
+        attachable: true
+    backend:
+        name: backend
+        driver: overlay
+        attachable: true
+
+volumes:
+    mysql_data:
+        external: true
+    redis_data:
+        external: true
+
+secrets:
+    mysql_root_password:
+        external: true
+    jwt_key:
+        external: true
+    refresh_key:
+        external: true
+    auth_key:
+        external: true
+    aes_key:
+        external: true
+    email_password:
+        external: true

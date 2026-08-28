@@ -1,0 +1,92 @@
+.schedule_container {
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.schedule_row_total_header,
+.schedule_column_total_header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 0.9rem;
+}
+
+.schedule_row_total,
+.schedule_column_total {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.9rem;
+
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 0 0.1rem 0 0.2rem;
+
+    color: #6d6d6d;
+}
+
+.schedule_cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    padding: 0.3rem 0;
+    height: 3rem;
+    border-radius: 0.3rem;
+
+    &.adding {
+        &.new {
+            background-color: var(--n_b);
+        }
+
+        &.old {
+            background-color: var(--darker2);
+        }
+    }
+
+    .start,
+    .end {
+        /* font-size: 1rem; */
+        font-size: 0.95rem;
+        line-height: 1rem;
+        font-weight: 500;
+    }
+
+    .hours {
+        font-size: 0.8rem;
+        line-height: 0.8rem;
+
+        margin-top: 0.1rem;
+    }
+
+    &:not(.workday) {
+        font-weight: 600;
+
+        &.absence {
+            background-color: #f88787;
+        }
+
+        &.vacation {
+            background-color: #e0e0e0;
+        }
+
+        &.excused {
+            background-color: #e0e0e0;
+        }
+
+        &.dayoff {
+            background-color: #e0e0e0;
+        }
+    }
+}
+
+@media (max-width: 77rem) {
+    .schedule_container {
+        height: auto;
+    }
+}

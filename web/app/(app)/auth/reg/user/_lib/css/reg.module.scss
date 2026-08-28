@@ -1,0 +1,80 @@
+@use "./../../../../../../css/buttons.module" as *;
+
+.reg_page {
+    display: flex;
+    justify-content: center;
+    // align-items: center;
+
+    width: 100%;
+    /*     height: 100%; */
+
+    .reg_form {
+        display: contents;
+    }
+
+    .main_div {
+        display: grid;
+        grid-template-rows: 1.8rem 1.2rem 1fr auto auto;
+        position: relative;
+
+        background-color: var(--main_white);
+        padding: 1rem 1rem 2rem 2rem;
+        border-radius: 1rem;
+
+        height: fit-content;
+
+        //height: 30rem;
+        min-height: 30rem;
+        width: 20rem;
+
+        margin: 2rem 0;
+
+        box-sizing: border-box;
+
+        box-shadow: 0 0.5rem 1rem #0000001a;
+
+        .header {
+            font-size: 1.5rem;
+            line-height: 1.1;
+            font-weight: 500;
+        }
+
+        .stage {
+            font-weight: 500;
+            font-size: 0.9rem;
+            line-height: 1.1;
+            color: #000000;
+        }
+
+        .content {
+            margin: 3rem 0;
+            width: 17rem;
+
+            flex-grow: 1;
+        }
+
+        .error_div {
+            margin: 0.5rem 0;
+
+            .error {
+                display: flex;
+                flex-direction: column;
+                gap: 0.2rem;
+
+                font-size: 0.9rem;
+                line-height: 1.1;
+                font-weight: 500;
+
+                color: #ce1111;
+            }
+        }
+
+        .note {
+            margin-top: 2rem;
+
+            font-size: 0.8rem;
+            line-height: 1.1;
+            color: #868686;
+        }
+    }
+}

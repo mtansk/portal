@@ -1,0 +1,23 @@
+.main_div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 2rem;
+
+    background-color: var(--main_white);
+    border-radius: 1rem;
+    padding: 1rem 2rem;
+    cursor: auto;
+
+    width: 18rem;
+    height: fit-content;
+    min-height: 12rem;
+
+    .text {
+        /*  font-size: 1rem; */
+        font-size: 1rem;
+        font-weight: 500;
+        color: #494949;
+        line-height: 1.1;
+    }
+}

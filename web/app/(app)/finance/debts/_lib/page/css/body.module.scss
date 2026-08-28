@@ -1,0 +1,135 @@
+@use "./../../../../../../css/buttons.module" as *;
+
+.body {
+    flex-grow: 1;
+
+    display: flex;
+    justify-content: center;
+
+    margin-top: 2rem;
+
+    .main_div {
+        width: clamp(20rem, 90%, 60rem);
+        padding: 1rem 2rem;
+        border-radius: 1rem;
+        background-color: var(--darker1);
+
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+    }
+}
+
+.dept_div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    .department_name {
+        font-size: 1.2rem;
+        font-weight: 500;
+        color: #707070;
+
+        word-wrap: break-word;
+        word-break: break-all;
+
+        line-height: 1.1;
+    }
+
+    .dept_body {
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+
+        .user_div {
+            display: flex;
+            flex-direction: column;
+            gap: 0.2rem;
+
+            margin-left: 2rem;
+
+            .user_name {
+                display: flex;
+                flex-direction: column;
+                .name {
+                    font-size: 1rem;
+                    line-height: 1;
+                    font-weight: 500;
+                    color: #383838;
+                }
+
+                .title {
+                    font-size: 0.8rem;
+                    line-height: 1;
+                }
+            }
+
+            .user_body {
+                display: flex;
+                flex-direction: column;
+                gap: 0.2rem;
+
+                background-color: var(--main_white);
+                border-radius: 0.5rem;
+                padding: 0.5rem 2rem;
+
+                .empty {
+                    display: flex;
+                    justify-content: center;
+                    color: #5a5a5a;
+                }
+
+                .add {
+                    .add_button {
+                        @extend .bold_text_button;
+                        font-size: 0.9rem;
+                        color: #616161;
+                    }
+                }
+            }
+        }
+    }
+
+    .dept_total {
+        display: flex;
+        justify-content: flex-end;
+
+        .total {
+            display: flex;
+            gap: 0.2rem;
+
+            font-size: 0.9rem;
+            line-height: 1;
+            color: #5c5c5c;
+            font-weight: 500;
+        }
+    }
+}
+
+@media (max-width: 54rem) {
+    .body {
+        margin: 1rem 0;
+        .main_div {
+            width: 95%;
+            padding: 1rem;
+        }
+    }
+
+    .dept_div {
+        .dept_body {
+            gap: 1.5rem;
+            .user_div {
+                margin-left: 0rem;
+                .user_name {
+                    .title {
+                        display: none;
+                    }
+                }
+
+                .user_body {
+                    padding: 0.5rem;
+                }
+            }
+        }
+    }
+}

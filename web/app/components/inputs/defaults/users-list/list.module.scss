@@ -1,0 +1,146 @@
+@use "./../../../../css/sass.module" as *;
+@use "./../../../../css/buttons.module" as *;
+
+.main_div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    justify-content: flex-start;
+    flex-grow: 1;
+
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+
+    .search {
+        display: flex;
+        gap: 0.5rem;
+        .input {
+            width: 60%;
+            margin-left: 2rem;
+        }
+
+        .select_all {
+            @extend .bold_text_button;
+            font-size: 0.8rem;
+            color: var(--input_border);
+            line-height: 1.1;
+        }
+    }
+}
+
+.users_list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    .dept_div {
+        display: flex;
+        flex-direction: column;
+        gap: 0.6rem;
+
+        word-wrap: break-word;
+
+        width: 100%;
+        box-sizing: border-box;
+
+        .department_name {
+            font-size: 1.1rem;
+            line-height: 1;
+            font-weight: 500;
+            color: #464646;
+
+            /*      margin-left: 2rem; */
+        }
+
+        .dept_body {
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+
+            margin-left: 2rem;
+
+            .no_users {
+                font-size: 0.9rem;
+                color: #464646;
+            }
+
+            .user_div {
+                @extend .empty_button;
+
+                display: grid;
+                grid-template-areas:
+                    "name box"
+                    "title box";
+                grid-template-columns: minmax(0, 1fr) 2rem;
+                row-gap: 0.2rem;
+
+                background-color: var(--darker1);
+                border-radius: 0.4rem;
+                padding: 0.2rem 0.5rem 0.2rem 1rem;
+
+                margin-right: 0.5rem;
+                border: 0.1rem solid transparent;
+
+                transition: all 0.1s;
+
+                &:hover {
+                    background-color: var(--darker2);
+                }
+
+                &.selected {
+                    background-color: var(--main_white);
+                    border-color: var(--input_border);
+                }
+
+                .user_name {
+                    grid-area: name;
+
+                    font-weight: 500;
+                    line-height: 1;
+                }
+
+                .user_title {
+                    grid-area: title;
+                    font-size: 0.9rem;
+                    line-height: 1.1;
+                    color: #464646;
+                }
+
+                .checkbox {
+                    grid-area: box;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 36rem) {
+    .main_div {
+        .search {
+            .input {
+                margin-left: 0;
+            }
+        }
+    }
+
+    .users_list {
+        .dept_div {
+            .department_name {
+            }
+
+            .dept_body {
+                margin-left: 0;
+
+                .no_users {
+                }
+
+                .user_div {
+                }
+            }
+        }
+    }
+}

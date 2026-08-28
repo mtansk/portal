@@ -1,0 +1,20 @@
+.button_div {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+
+    min-height: 2.4rem;
+
+    button {
+        //   min-width: 7rem;
+        /*  height: fit-content; */
+    }
+
+    .left_div {
+    }
+
+    .right_div {
+        display: flex;
+        gap: 1rem;
+    }
+}

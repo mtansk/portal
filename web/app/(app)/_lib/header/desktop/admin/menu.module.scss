@@ -1,0 +1,17 @@
+.header_menu {
+    position: absolute;
+
+    z-index: 100000;
+    top: 3rem;
+
+    display: flex;
+    gap: 3rem;
+    flex-wrap: wrap;
+
+    padding: 1rem 2rem;
+    border-bottom-right-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+
+    background-color: #edf1f5;
+    box-shadow: 0 0.5rem 1rem #0000001a;
+}

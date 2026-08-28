@@ -1,0 +1,67 @@
+.wrapper_div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+
+    &:focus-within .label {
+        color: var(--input_border);
+    }
+
+    &:has(input:user-invalid, textarea:user-invalid, select:user-invalid)
+        .label {
+        color: #f33e3e !important;
+    }
+
+    .header_label {
+        font-size: 0.9rem;
+        font-weight: 500;
+        padding: 0.3rem 0.6rem;
+        background-color: var(--darker1);
+        border-radius: 0.5rem;
+
+        margin-bottom: 0.3rem;
+    }
+
+    .label {
+        font-size: 0.9rem;
+        color: #686868;
+        font-weight: 500;
+
+        display: flex;
+        justify-content: flex-start;
+
+        transition: all 0.3s;
+    }
+
+    .input {
+        display: flex;
+        position: relative;
+        width: fit-content;
+
+        .req {
+            display: flex;
+            justify-content: center;
+            width: 1rem;
+            flex-shrink: 0;
+
+            font-weight: 500;
+            color: red;
+        }
+
+        .length {
+            position: absolute;
+            bottom: 0.2rem;
+            right: 1.5rem;
+
+            font-size: 0.7rem;
+            color: #696969;
+
+            pointer-events: none;
+        }
+    }
+
+    .desc {
+        font-size: 0.9rem;
+        line-height: 1rem;
+    }
+}

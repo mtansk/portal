@@ -1,0 +1,22 @@
+@use "./../../../../../css/buttons.module" as *;
+
+.reg_button {
+    @extend .bold_text_button;
+
+    font-size: 1rem;
+    /*   color:; */
+}
+
+.resend_button {
+    @extend .bold_text_button;
+
+    font-size: 0.9rem;
+    line-height: 1.1;
+    width: 6rem;
+    /*   color:; */
+}
+
+.spinner_div {
+    display: flex;
+    justify-content: flex-end;
+}

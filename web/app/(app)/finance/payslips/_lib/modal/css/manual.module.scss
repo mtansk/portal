@@ -1,0 +1,104 @@
+@use "./../../../../../../css/buttons.module" as *;
+
+.main_div {
+    > form {
+        display: contents;
+    }
+
+    cursor: auto;
+
+    display: grid;
+    grid-template-areas:
+        "user cal"
+        "e2 cal"
+        "check cal"
+        "e button";
+    grid-template-columns: 18rem auto;
+
+    column-gap: 4rem;
+    row-gap: 1rem;
+
+    padding: 2rem 2rem 1rem;
+    background-color: var(--main_white);
+    border-radius: 1rem;
+
+    .user {
+        grid-area: user;
+
+        .select_all {
+            @extend .bold_text_button;
+            color: var(--input_border);
+            font-size: 0.9rem;
+
+            margin-bottom: 0.5rem;
+        }
+
+        :global(.objects_div) {
+            max-height: 10rem !important;
+        }
+    }
+
+    .checkbox {
+        grid-area: check;
+
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
+
+        /*   margin-top: 2rem; */
+
+        .text {
+            font-size: 0.9rem;
+            line-height: 1rem;
+        }
+    }
+
+    .calendar {
+        grid-area: cal;
+
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+
+        .dates {
+            display: flex;
+            height: 1.8rem;
+
+            .date {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                width: 7rem;
+                border-bottom: 0.16rem solid transparent;
+                transition: all 0.3s ease-in-out;
+
+                &.active {
+                    border-color: #84b1ec;
+                }
+            }
+        }
+    }
+
+    .button {
+        grid-area: button;
+
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+    }
+}
+
+@media (max-width: 48rem) {
+    .main_div {
+        grid-template-areas:
+            "user"
+            "cal"
+            "check"
+            "button";
+        grid-template-columns: 20rem;
+        row-gap: 1rem;
+
+        padding: 1rem;
+    }
+}

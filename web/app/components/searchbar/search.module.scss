@@ -1,0 +1,33 @@
+@use "./../../css/sass.module" as *;
+@use "./../../css/buttons.module" as *;
+
+.search_input {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    .input {
+        width: 14rem;
+        padding: 0.25rem 0.5rem;
+    }
+
+    .button {
+        @extend .empty_button;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        font-size: 1.3rem;
+        color: #474747;
+
+        border-radius: 0.4rem;
+        height: fit-content;
+
+        transition: all 0.3s;
+
+        &:hover {
+            background-color: var(--darker2);
+        }
+    }
+}

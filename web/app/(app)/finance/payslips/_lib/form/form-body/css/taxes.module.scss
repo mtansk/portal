@@ -1,0 +1,70 @@
+@use "./common.module" as *;
+@use "./../../../../../../../css/sass.module" as *;
+@use "./../../../../../../../css/buttons.module" as *;
+
+.body {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    .list {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        .type_block {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+
+            .block_header {
+                @extend .block_header;
+            }
+            .body {
+            }
+
+            .block_bottom {
+                display: flex;
+                justify-content: space-between;
+
+                padding: 0.2rem 2rem 0 1rem;
+                border-top: 0.1rem solid #e0e0e0;
+
+                .add_button {
+                    @extend .bold_text_button;
+
+                    color: #4291d1;
+                }
+
+                .block_total {
+                    font-weight: 500;
+                    color: var(--m_gray);
+
+                    &.tax {
+                        font-size: 1.1rem;
+                        color: black;
+                    }
+                }
+            }
+        }
+    }
+
+    .group {
+        display: flex;
+        flex-direction: column;
+        gap: 0.4rem;
+    }
+}
+
+.bottom {
+    display: flex;
+    justify-content: flex-end;
+
+    padding: 0.2rem 2rem 0 1rem;
+
+    .total_div {
+        color: #585858;
+        line-height: 1;
+        font-size: 0.9rem;
+    }
+}

@@ -1,0 +1,29 @@
+@use "./../../../../css/sass.module" as *;
+@use "./../../../../css/buttons.module" as *;
+
+.input_div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+
+    width: 16rem;
+    box-sizing: border-box;
+
+    .empty {
+        font-size: 1.2rem;
+        line-height: 1.1;
+    }
+
+    .select_button {
+        @extend .bold_text_button;
+
+        color: var(--input_border);
+        font-size: 1rem;
+    }
+
+    .main_div {
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
+    }
+}

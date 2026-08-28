@@ -1,0 +1,57 @@
+.main_div {
+    display: grid;
+    grid-template-areas:
+        "name rate"
+        "desc rate"
+        "desc e1";
+    grid-template-columns: 17rem 12rem;
+    column-gap: 3rem;
+    row-gap: 1rem;
+
+    padding: 0.5rem 2rem 1rem;
+    background-color: var(--main_white);
+
+    .group {
+        grid-area: group;
+
+        .selector {
+            width: 17rem;
+        }
+    }
+
+    .name {
+        grid-area: name;
+    }
+
+    .rate {
+        grid-area: rate;
+
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .desc {
+        grid-area: desc;
+    }
+}
+
+@media (max-width: 38rem) {
+    .main_div {
+        display: grid;
+        grid-template-areas:
+            "group"
+            "name"
+            "desc"
+            "rate";
+        grid-template-columns: 18rem;
+        row-gap: 1rem;
+
+        padding: 0.5rem 1rem 2rem;
+        background-color: var(--main_white);
+
+        .rate {
+            align-items: flex-end;
+        }
+    }
+}

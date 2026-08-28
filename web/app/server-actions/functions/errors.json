@@ -1,0 +1,154 @@
+{
+    "ACCOUNT-PLANS": {
+        "GET": "ACCOUNT-PLANS-GET",
+        "NO-SLOTS": "ACCOUNT-PLANS-NO-SLOTS"
+    },
+    "AUTH": {
+        "ACCESS-DATA": "AUTH-ACCESS-DATA",
+        "CODE": {
+            "CREATE": "AUTH-CODE-CREATE",
+            "EARLY": "AUTH-CODE-EARLY",
+            "INVALID": "AUTH-CODE-INVALID",
+            "LIMIT": "AUTH-CODE-LIMIT",
+            "REFRESH": "AUTH-CODE-REFRESH"
+        },
+        "LOGIN": {
+            "CODE": {
+                "EARLY": "AUTH-LOGIN-CODE-EARLY",
+                "EXPIRED": "AUTH-LOGIN-CODE-EXPIRED",
+                "INSERT": "AUTH-LOGIN-CODE-INSERT",
+                "INVALID": "AUTH-LOGIN-CODE-INVALID",
+                "LIMIT": "AUTH-LOGIN-CODE-LIMIT"
+            },
+            "COMPANY": {
+                "GET": "AUTH-LOGIN-COMPANY-GET"
+            },
+            "CREDENTIALS": "AUTH-LOGIN-CREDENTIALS",
+            "OTHER": "AUTH-LOGIN-OTHER",
+            "TOKEN": {
+                "DECODE": "AUTH-LOGIN-TOKEN-DECODE",
+                "ENCODE": "AUTH-LOGIN-TOKEN-ENCODE",
+                "EXPIRED": "AUTH-LOGIN-TOKEN-EXPIRED"
+            },
+            "USER": "AUTH-LOGIN-USER"
+        },
+        "PASSWORD": {
+            "HASH": "AUTH-PASSWORD-HASH",
+            "REHASH": "AUTH-PASSWORD-REHASH",
+            "INVALID": "AUTH-PASSWORD-INVALID",
+            "UPDATE": "AUTH-PASSWORD-UPDATE"
+        },
+        "REG": {
+            "ACCOUNT": "AUTH-REG-ACCOUNT",
+            "COMPANY": {
+                "INSERT": "AUTH-REG-COMPANY-INSERT"
+            },
+            "EMAIL": {
+                "EXISTS": "AUTH-REG-EMAIL-EXISTS"
+            },
+            "ID": "AUTH-REG-ID",
+            "INSERT": {
+                "INITIAL": "AUTH-REG-INSERT-INITIAL",
+                "MAIN": "AUTH-REG-INSERT-MAIN"
+            },
+            "INVITE": {
+                "INVALID": "AUTH-REG-INVITE-INVALID"
+            },
+            "OTHER": "AUTH-REG-OTHER",
+            "TOKEN": {
+                "DECODE": "AUTH-REG-TOKEN-DECODE",
+                "ENCODE": "AUTH-REG-TOKEN-ENCODE",
+                "EXPIRED": "AUTH-REG-TOKEN-EXPIRED"
+            },
+            "USER": {
+                "LIMIT": "AUTH-REG-USER-LIMIT"
+            }
+        },
+        "TOKEN": {
+            "DECODE": "AUTH-TOKEN-DECODE",
+            "ENCODE": "AUTH-TOKEN-ENCODE",
+            "EXPIRED": "AUTH-TOKEN-EXPIRED",
+            "INVALID": "AUTH-TOKEN-INVALID"
+        },
+        "TOKENS": {
+            "REFRESH": {
+                "DELETE": "AUTH-TOKENS-REFRESH-DELETE",
+                "INVALID": "AUTH-TOKENS-REFRESH-INVALID",
+                "POST": "AUTH-TOKENS-REFRESH-POST"
+            }
+        }
+    },
+    "CRYPTO": {
+        "UUID": "CRYPTO-UUID"
+    },
+    "DB": {
+        "PUT": {
+            "EXECUTE": "DB-PUT-EXECUTE",
+            "PREPARE": "DB-PUT-PREPARE"
+        },
+        "TRANSACTION": {
+            "COMMIT": "DB-TRANSACTION-COMMIT"
+        }
+    },
+    "DEPT": {
+        "CREATE": "DEPT-CREATE"
+    },
+    "FILTER": {
+        "ALLOWED-VALUES": "FILTER-ALLOWED-VALUES",
+        "DATE": "FILTER-DATE",
+        "EMAIL": "FILTER-EMAIL",
+        "FLOAT": "FILTER-FLOAT",
+        "IDS": {
+            "DATES": "FILTER-IDS-DATES",
+            "INVALID": "FILTER-IDS-INVALID"
+        },
+        "LENGTH": {
+            "MAX": "FILTER-LENGTH-MAX",
+            "MIN": "FILTER-LENGTH-MIN"
+        },
+        "PASSWORD": "FILTER-PASSWORD",
+        "PRESET": "FILTER-PRESET",
+        "REQUIRED": "FILTER-REQUIRED",
+        "SHEET": {
+            "DUR": "FILTER-SHEET-DUR"
+        },
+        "TIME": "FILTER-TIME",
+        "TOTAL": {
+            "NULL": "FILTER-TOTAL-NULL",
+            "QTY": "FILTER-TOTAL-QTY",
+            "RANGE": "FILTER-TOTAL-RANGE",
+            "RATE": "FILTER-TOTAL-RATE"
+        },
+        "VALUE": {
+            "FRACTION": "FILTER-VALUE-FRACTION",
+            "MAX": "FILTER-VALUE-MAX",
+            "MIN": "FILTER-VALUE-MIN"
+        }
+    },
+    "INVITE": {
+        "DELETE": "INVITE-DELETE",
+        "STORE": "INVITE-STORE",
+        "USER-ALREADY-INVITED": "INVITE-USER-ALREADY-INVITED",
+        "USER-ID": "INVITE-USER-ID"
+    },
+    "MAILER": {
+        "SEND": "MAILER-SEND"
+    },
+    "PAYSLIP": {
+        "CREATE": "PAYSLIP-CREATE"
+    },
+    "ROUTER": {
+        "GLOBAL": "ROUTER-GLOBAL"
+    },
+    "LIMIT": {
+        "DOWNLOAD": "LIMIT-DOWNLOAD",
+        "RESTORE": "LIMIT-RESTORE"
+    },
+    "PAYMENT": {
+        "INITIALIZE": "PAYMENT-INITIALIZE",
+        "TRANSACTION": {
+            "CHECK": "PAYMENT-TRANSACTION-CHECK",
+            "SUB": "PAYMENT-TRANSACTION-SUB"
+        }
+    }
+}

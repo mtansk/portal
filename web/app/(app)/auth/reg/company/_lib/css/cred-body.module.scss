@@ -1,0 +1,90 @@
+@use "./../../../../../../css/buttons.module" as *;
+
+.input {
+    font-size: 1.2rem;
+    line-height: 1.1;
+
+    padding: 0.3rem 0.6rem;
+
+    width: 15rem;
+}
+
+.password {
+    font-weight: 600;
+
+    &::placeholder {
+        font-weight: 400 !important;
+    }
+}
+
+.reg_div {
+    display: flex;
+    flex-direction: column;
+
+    .email {
+        &::placeholder {
+            font-size: 0.9rem;
+        }
+    }
+
+    .password_wrapper {
+        margin-top: 1rem;
+    }
+    .password_repeat_wrapper {
+        margin-top: 0.3rem;
+    }
+
+    .checkbox_div {
+        margin-top: 1rem;
+
+        .checkbox {
+            font-size: 1.2rem;
+        }
+    }
+
+    .checkbox_note {
+        font-size: 0.8rem;
+        line-height: 1.1;
+
+        width: 15rem;
+        color: #353535;
+        text-align: justify;
+
+        margin-top: 1rem;
+    }
+
+    .textarea {
+        font-size: 1rem;
+        line-height: 1.1;
+
+        padding: 0.3rem 0.6rem;
+
+        width: 15rem;
+        height: 5rem;
+    }
+
+    .note {
+        font-size: 0.8rem;
+        line-height: 1.1;
+
+        width: 15rem;
+        color: #353535;
+
+        margin-top: 0.2rem;
+    }
+}
+
+.code_div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+
+    margin-top: 2rem;
+
+    .text {
+        font-size: 0.9rem;
+        line-height: 1.1;
+
+        color: #353535;
+    }
+}

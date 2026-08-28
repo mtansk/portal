@@ -1,0 +1,130 @@
+.body_div {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+
+    width: 100%;
+
+    .main_div {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 1rem;
+
+        margin: 2rem 0;
+
+        width: clamp(20rem, 85%, 50rem);
+        box-sizing: border-box;
+
+        background-color: var(--main_white);
+
+        padding: 2rem 2rem;
+        border-radius: 1rem;
+
+        .depts_div {
+            display: flex;
+            flex-direction: column;
+            gap: 1.4rem;
+
+            width: 100%;
+
+            .dept_div {
+                display: flex;
+                flex-direction: column;
+                gap: 0.6rem;
+
+                .dept_name {
+                    font-size: 1.2rem;
+                    font-weight: 500;
+                    color: #666666;
+
+                    word-wrap: break-word;
+                    word-break: break-word;
+                    overflow-wrap: break-word;
+                }
+                .users {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.6rem;
+
+                    margin-left: 2rem;
+
+                    .user_div {
+                        display: flex;
+                        flex-direction: column;
+
+                        background-color: var(--darker1);
+                        border-radius: 0.4rem;
+
+                        padding: 0.3rem 1rem;
+
+                        transition: all 0.2s;
+
+                        &:hover {
+                            cursor: pointer;
+                            background-color: var(--darker2);
+                        }
+
+                        .name {
+                            font-weight: 500;
+                            line-height: 1.1;
+                        }
+
+                        .title {
+                            font-size: 0.9rem;
+                            line-height: 1.1;
+                            color: #585858;
+                        }
+                    }
+                }
+            }
+        }
+
+        .info_div {
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+
+            font-size: 0.9rem;
+            line-height: 1;
+
+            font-weight: 500;
+            color: #242424;
+
+            .users_link {
+                width: fit-content;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 32rem) {
+    .body_div {
+        .main_div {
+            padding: 2rem 1rem;
+            border-radius: 1rem;
+
+            width: 95svw;
+
+            .depts_div {
+                .dept_div {
+                    .dept_name {
+                        word-wrap: break-word;
+                    }
+                    .users {
+                        margin-left: 1rem;
+
+                        .user_div {
+                            padding: 0.3rem 1rem;
+                            word-wrap: break-word;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

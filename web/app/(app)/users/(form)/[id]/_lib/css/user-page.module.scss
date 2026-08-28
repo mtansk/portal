@@ -1,0 +1,115 @@
+.main_div {
+    display: grid;
+    grid-template-areas:
+        "block account"
+        "contacts account"
+        "links links"
+        "buttons buttons";
+    grid-template-columns: 18rem 18rem;
+    column-gap: 6rem;
+
+    .block {
+        grid-area: block;
+
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
+
+        max-width: 18rem;
+        word-wrap: break-word;
+
+        .dept {
+            font-size: 1.1rem;
+            line-height: 1.1;
+            font-weight: 500;
+            color: #585858;
+        }
+
+        .name {
+            font-weight: 500;
+            font-size: 1.2rem;
+            line-height: 1.1;
+        }
+
+        .title {
+            font-size: 0.9rem;
+            line-height: 1;
+            font-style: italic;
+            color: #3d3d3d;
+        }
+    }
+
+    .account {
+        grid-area: account;
+
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .contacts {
+        grid-area: contacts;
+
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
+
+        .contact {
+            font-size: 1.1rem;
+        }
+    }
+
+    .links {
+        grid-area: links;
+
+        display: flex;
+        flex-direction: column;
+        gap: 0.6rem;
+
+        .links_div {
+            display: flex;
+            gap: 1rem;
+        }
+    }
+
+    .buttons_div {
+        grid-area: buttons;
+
+        display: flex;
+        gap: 1rem;
+        justify-content: flex-end;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 46rem) {
+    .main_div {
+        display: grid;
+        grid-template-areas:
+            "block"
+            "contacts"
+            "links"
+            "account"
+            "buttons";
+        grid-template-columns: 18rem;
+        gap: 2rem;
+
+        .block {
+            word-wrap: break-word;
+        }
+
+        .links {
+            .links_div {
+                flex-wrap: wrap;
+            }
+        }
+
+        .buttons_div {
+            grid-area: buttons;
+
+            display: flex;
+            gap: 1rem;
+            justify-content: flex-end;
+            align-items: flex-start;
+        }
+    }
+}

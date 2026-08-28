@@ -1,0 +1,178 @@
+@use "./../../../../css/sass.module.scss" as *;
+
+.date_selector_div {
+    &.disabled {
+        pointer-events: none;
+
+        .calendar {
+            border: 0.1rem solid var(--darker2);
+        }
+    }
+
+    .main_div {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+
+        padding: 0.5rem;
+
+        border-radius: 0.5rem;
+        border: 0.1rem solid var(--darker3);
+
+        width: 19rem;
+        box-sizing: border-box;
+        height: 19.5rem;
+
+        user-select: none;
+
+        background-color: var(--main_white);
+
+        /*      &.with_reset {
+            height: 20rem;
+        } */
+
+        /*     &:hover {
+            border: 0.1rem solid #808080;
+        } */
+
+        .period_picker_div {
+            display: flex;
+            gap: 1rem;
+
+            .period_picker {
+                font-weight: 500;
+            }
+        }
+
+        .calendar_div {
+            .row {
+                display: grid;
+                grid-template-columns: repeat(7, 1fr);
+
+                .holder {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    &.period {
+                        background-color: var(--darker2);
+
+                        .block {
+                            background-color: var(--darker2);
+                        }
+                    }
+
+                    &.period_selected_start {
+                        &:not(.period_selected_end) {
+                            background: linear-gradient(
+                                90deg,
+                                transparent 50%,
+                                var(--darker2) 50%
+                            );
+                        }
+                    }
+
+                    &.period_selected_end {
+                        &:not(.period_selected_start) {
+                            background: linear-gradient(
+                                90deg,
+                                var(--darker2) 50%,
+                                transparent 50%
+                            );
+                        }
+                    }
+
+                    .block {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+
+                        width: 2rem;
+                        height: 2rem;
+                        box-sizing: content-box;
+
+                        border: 0.1rem solid transparent;
+                        border-radius: 0.3rem;
+                    }
+                }
+            }
+
+            .weekdays {
+                .weekday {
+                    font-weight: 500;
+
+                    &:nth-last-child(1),
+                    &:nth-last-child(2) {
+                        color: #db2424;
+                    }
+                }
+            }
+
+            .dates {
+                display: flex;
+                flex-direction: column;
+                gap: 0.2rem;
+
+                .week {
+                    .day {
+                        @extend .empty_button;
+
+                        &:not(.empty) {
+                            &.selected {
+                                background-color: var(--n_b);
+
+                                &:hover {
+                                    background-color: var(--n_b);
+                                }
+                            }
+
+                            &.today {
+                                border: 0.1rem solid #f88888;
+                            }
+
+                            &.disabled_date {
+                                &:not(.selected) {
+                                    background-color: #d3d3d3;
+                                    color: #5e5e5e;
+
+                                    &:hover {
+                                        cursor: default;
+                                        background-color: #d3d3d3;
+                                    }
+                                }
+                            }
+
+                            &:hover {
+                                cursor: pointer;
+                                background-color: var(--darker2);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .reset {
+            display: flex;
+            flex-grow: 1;
+            justify-content: flex-end;
+            align-items: flex-end;
+            position: absolute;
+            bottom: 0;
+            right: 1rem;
+
+            button {
+                align-items: flex-end;
+                padding: 0.2rem 0.5rem;
+
+                > div {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+}

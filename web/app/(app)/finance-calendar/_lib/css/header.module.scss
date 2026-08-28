@@ -1,0 +1,115 @@
+.finance_calendar_header {
+    display: flex;
+    justify-content: center;
+    min-height: 7rem;
+    background-color: var(--darker1);
+
+    .main_div {
+        display: grid;
+        grid-template-areas:
+            "title eu  period"
+            "add le div";
+
+        grid-template-columns: auto 1fr auto;
+        row-gap: 0.5rem;
+
+        margin: 1rem 1rem 0.5rem;
+        width: clamp(50rem, 90%, 70rem);
+        box-sizing: border-box;
+
+        .period {
+            grid-area: period;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .add {
+            grid-area: add;
+            display: flex;
+            gap: 0.2rem;
+
+            .add_title {
+                font-size: 0.8rem;
+                line-height: 1;
+
+                width: 8rem;
+
+                color: #5c5c5c;
+            }
+        }
+
+        .cancel {
+            grid-area: add;
+            display: flex;
+        }
+
+        .title {
+            grid-area: title;
+            font-size: 1.5rem;
+        }
+
+        .options_div {
+            grid-area: div;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+
+            select {
+                &:not(:active) {
+                    border-color: transparent;
+                }
+
+                &:hover {
+                    box-shadow: var(--h_sh);
+                }
+            }
+
+            .object {
+            }
+
+            .dept {
+                select {
+                    width: 14rem;
+                }
+            }
+
+            .sum {
+            }
+        }
+
+        .button_div {
+            grid-area: div;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+    }
+}
+
+@media (max-width: 77rem) {
+    .finance_calendar_header {
+        height: auto;
+        .main_div {
+            grid-template-areas:
+                "title"
+                "period"
+                "add"
+                "div";
+            justify-items: start;
+
+            grid-template-columns: auto;
+            row-gap: 0.5rem;
+
+            width: 95svw;
+
+            .options_div {
+                flex-wrap: wrap;
+                justify-content: flex-start;
+            }
+        }
+    }
+}

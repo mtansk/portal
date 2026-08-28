@@ -1,0 +1,61 @@
+.totals {
+    margin-top: 1rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    padding: 1rem;
+    background-color: var(--main_white);
+    border-radius: 1rem;
+
+    .title {
+        font-size: 1.5rem;
+    }
+
+    .totals_grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 10rem;
+        row-gap: 0.2rem;
+
+        font-size: 1.2rem;
+
+        .row_total {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .row_title {
+            line-height: 1.1;
+        }
+
+        .overall_total {
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+
+            font-size: 1.4rem;
+        }
+
+        .bottom {
+            font-size: 1rem;
+            color: #3d3d3d;
+        }
+    }
+}
+
+@media (max-width: 77rem) {
+    .totals {
+        .title {
+        }
+
+        .totals_grid {
+            .overall_total {
+                font-size: 1.2rem;
+                line-height: 1.1;
+            }
+
+            .bottom {
+            }
+        }
+    }
+}

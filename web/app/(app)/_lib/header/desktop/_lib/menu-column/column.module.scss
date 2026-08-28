@@ -1,0 +1,27 @@
+.menu_column {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+
+    .menu_header {
+        font-size: 1.1rem;
+        font-weight: 500;
+    }
+
+    .menu_link {
+        font-size: 0.9rem;
+        font-weight: 450;
+        color: #272727;
+
+        &:hover {
+            text-decoration: underline;
+        }
+
+        &.active {
+            text-decoration: underline;
+            text-decoration-color: #2d98f5;
+            text-decoration-thickness: 0.1rem;
+            color: black;
+        }
+    }
+}

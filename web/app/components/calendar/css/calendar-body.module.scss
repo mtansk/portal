@@ -1,0 +1,141 @@
+.dept_div {
+    display: grid;
+    grid-template-columns: subgrid;
+    grid-column: 1 / -1;
+
+    .department_name {
+        position: sticky;
+        left: 0;
+
+        background-color: var(--main_white);
+        z-index: 20;
+
+        color: #5c5c5c;
+
+        display: flex;
+        font-size: 1.2rem;
+        line-height: 1.1;
+        font-weight: 500;
+
+        margin-top: 1.5rem;
+        padding: 0 0.4rem;
+        padding-left: 1.5rem;
+
+        word-break: break-word;
+    }
+
+    > .user_row {
+        display: grid;
+        grid-template-columns: subgrid;
+        grid-column: 1 / -1;
+
+        &:nth-child(2) {
+            > div {
+                border-top: 0.05rem solid var(--darker1);
+            }
+        }
+
+        > div {
+            border-bottom: 0.05rem solid var(--darker1);
+            padding: 0.2rem 0;
+        }
+
+        > .name_div {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            position: sticky;
+            left: 0;
+
+            background-color: var(--main_white);
+            z-index: 20;
+
+            padding: 0 0.4rem;
+
+            .name {
+                font-size: 1rem;
+                font-weight: 500;
+
+                overflow: hidden;
+                text-overflow: ellipsis;
+
+                line-height: 1rem;
+
+                margin-top: 0.4rem;
+            }
+
+            .title {
+                font-size: 0.8rem;
+                font-style: italic;
+
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+
+                padding: 0 0.4rem 0 0;
+            }
+
+            .deleted_icon {
+                position: absolute;
+                right: 0.2rem;
+
+                font-size: 1.5rem;
+                color: #838383;
+            }
+        }
+
+        > .calendar_table_cell {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+
+            &.sunday {
+                border-right: 0.1rem solid var(--darker1);
+            }
+
+            .rounded_holder {
+                border-radius: 0.4rem;
+                border: 0.1rem solid transparent;
+
+                box-sizing: border-box;
+                height: 100%;
+                width: 100%;
+
+                margin: 0 0.15rem;
+                overflow: hidden;
+
+                &:hover {
+                    cursor: pointer;
+                    border-color: var(--darker3);
+                }
+            }
+        }
+
+        > .row_total_cell {
+            display: flex;
+            justify-content: center;
+            border-left: 0.1rem solid var(--darker2);
+        }
+    }
+}
+
+.column_total_header,
+.column_total_cell {
+    margin-top: 0.8rem;
+}
+
+@media (max-width: 77rem) {
+    .dept_div {
+        .department_name {
+            position: relative;
+        }
+
+        .user_row {
+            .name_div {
+                position: relative;
+            }
+        }
+    }
+}

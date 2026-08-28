@@ -1,0 +1,71 @@
+version: "3.8"
+
+services:
+    php-apache:
+        image: server-dev
+        ports:
+            - "8080:80"
+        volumes:
+            - ./server:/var/www/html
+        secrets:
+            - mysql_root_password
+            - jwt_key
+            - refresh_key
+            - auth_key
+            - aes_key
+            - email_password
+            - kassa_key
+        depends_on:
+            - mysql
+            - redis
+
+    mysql:
+        image: mysql:9.2
+        secrets:
+            - mysql_root_password
+        environment:
+            MYSQL_ROOT_PASSWORD_FILE: /run/secrets/mysql_root_password
+        volumes:
+            - mysql_data:/var/lib/mysql
+        deploy:
+            restart_policy:
+                condition: on-failure
+
+    phpmyadmin:
+        image: phpmyadmin:5.2.2
+        ports:
+            - "8081:80"
+        environment:
+            PMA_HOST: mysql
+        depends_on:
+            - mysql
+
+    redis:
+        image: redis:7.4.2
+        volumes:
+            - redis_data:/data
+        deploy:
+            restart_policy:
+                condition: on-failure
+
+volumes:
+    mysql_data:
+        external: true
+    redis_data:
+        external: true
+
+secrets:
+    mysql_root_password:
+        external: true
+    jwt_key:
+        external: true
+    refresh_key:
+        external: true
+    auth_key:
+        external: true
+    aes_key:
+        external: true
+    email_password:
+        external: true
+    kassa_key:
+        external: true

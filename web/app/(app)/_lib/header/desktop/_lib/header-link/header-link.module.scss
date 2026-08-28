@@ -1,0 +1,17 @@
+.header_link {
+    font-weight: 500;
+    font-size: 1rem;
+
+    border-bottom: 0.1rem solid transparent;
+    color: #3c454d;
+
+    &:hover {
+        color: #000000;
+    }
+
+    &.active {
+        color: #000000;
+
+        border-color: #000000;
+    }
+}

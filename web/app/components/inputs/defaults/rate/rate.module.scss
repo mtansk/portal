@@ -1,0 +1,10 @@
+.rate {
+    font-size: 1.4rem;
+    text-align: right;
+
+    width: 10rem;
+
+    &:focus {
+        text-align: initial;
+    }
+}

@@ -1,0 +1,192 @@
+.calendar_div {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    /*  background-color: var(--darker1); */
+    background-color: var(--main_white);
+    padding: 1rem 0.4rem;
+    border-radius: 0.5rem;
+
+    .month_name {
+        font-size: 1.4rem;
+        line-height: 1;
+        font-weight: 500;
+
+        margin-left: 0.8rem;
+
+        background-color: var(--main_white);
+    }
+
+    .period {
+        display: flex;
+        justify-content: center;
+        margin: 1rem 0;
+    }
+}
+
+.calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 2.8rem);
+    column-gap: 0.35rem;
+    row-gap: 0.5rem;
+
+    background-color: var(--main_white);
+    padding: 0.4rem 0.4rem;
+    border-radius: 0.4rem;
+
+    /*     box-shadow: 0 0 0.4rem 0.1rem #3535351a; */
+
+    .header,
+    .weekdays,
+    .dates,
+    .body,
+    .dept_div,
+    .dept_body,
+    .user_div,
+    .user_sheets,
+    .week {
+        display: grid;
+        grid-template-columns: subgrid;
+        grid-column: 1 / -1;
+    }
+
+    .user_name,
+    .dept_name {
+        grid-column: 1 / -1;
+    }
+
+    .header {
+        position: sticky;
+        top: 0rem;
+        background-color: var(--main_white);
+
+        padding: 0.6rem 0 0.4rem;
+
+        .weekdays {
+            .weekday {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 0.9rem;
+                line-height: 1;
+                font-weight: 500;
+
+                &.weekday5,
+                &.weekday6 {
+                    color: #c41919;
+                }
+            }
+        }
+        .dates {
+            .date {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 1.2rem;
+                line-height: 1.1;
+                font-weight: 500;
+
+                &.today {
+                    background-color: #f06363;
+                    color: var(--main_white);
+                    border-radius: 0.4rem;
+                }
+            }
+        }
+    }
+
+    .body {
+        row-gap: 3rem;
+
+        .dept_div {
+            row-gap: 0.6rem;
+            .dept_name {
+                font-weight: 450;
+                line-height: 1;
+                color: #888888;
+
+                word-wrap: break-word;
+                word-break: break-word;
+                overflow-wrap: break-word;
+            }
+
+            .dept_body {
+                row-gap: 1rem;
+
+                .user_div {
+                    padding-bottom: 0.2rem;
+                    border-bottom: 0.05rem solid #e4e4e4;
+
+                    row-gap: 0.1rem;
+
+                    .user_name {
+                        font-weight: 450;
+                        line-height: 1;
+                        color: #1d1d1d;
+                    }
+                    .user_sheets {
+                    }
+                }
+            }
+        }
+    }
+}
+
+.sheet_cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    padding: 0.3rem 0;
+    height: 3.6rem;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 0.3rem;
+
+    &.adding {
+        &.new {
+            background-color: var(--n_b);
+        }
+
+        &.old {
+            background-color: var(--darker2);
+        }
+    }
+
+    .start,
+    .end {
+        /* font-size: 1rem; */
+        font-size: 0.95rem;
+        line-height: 1rem;
+        font-weight: 500;
+    }
+
+    .hours {
+        font-size: 0.8rem;
+        line-height: 0.8rem;
+
+        margin-top: 0.1rem;
+    }
+
+    &:not(.workday) {
+        font-weight: 600;
+
+        &.absence {
+            background-color: #f88787;
+        }
+
+        &.vacation {
+            background-color: #e0e0e0;
+        }
+
+        &.excused {
+            background-color: #e0e0e0;
+        }
+
+        &.dayoff {
+            background-color: #e0e0e0;
+        }
+    }
+}

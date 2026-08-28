@@ -1,0 +1,171 @@
+@use "./../../../../../../css/buttons.module" as *;
+
+.main_div {
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+
+    .left {
+        display: flex;
+        flex-direction: column;
+        row-gap: 1rem;
+    }
+
+    .right {
+        height: fit-content;
+
+        display: grid;
+        grid-template-areas:
+            "def e"
+            "group time"
+            "main main"
+            "payslip payslip";
+        grid-template-columns: 17rem 14rem;
+        column-gap: 3rem;
+
+        row-gap: 1rem;
+
+        .def {
+            grid-area: def;
+
+            .def_select {
+                box-sizing: border-box;
+                width: 16rem;
+            }
+        }
+
+        .group {
+            grid-area: group;
+        }
+
+        .time {
+            grid-area: time;
+            margin-left: 2rem;
+
+            input {
+                font-size: 1rem;
+                height: 1.6rem;
+            }
+        }
+
+        .main {
+            grid-area: main;
+            display: grid;
+            grid-template-areas:
+                "header header"
+                "name fin";
+            grid-template-columns: subgrid;
+            row-gap: 0.2rem;
+            column-gap: 3rem;
+
+            .name_and_desc {
+                grid-area: name;
+
+                display: flex;
+                flex-direction: column;
+                gap: 0.2rem;
+            }
+
+            .fin {
+                grid-area: fin;
+
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+                gap: 0.2rem;
+
+                .total {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-end;
+
+                    margin-right: 1rem;
+                    margin-top: 0.5rem;
+
+                    font-weight: 500;
+
+                    box-sizing: border-box;
+
+                    .total_text {
+                        text-align: end;
+                        font-weight: 500;
+                    }
+
+                    .total_number {
+                        font-size: 1.3rem;
+                        max-width: 13rem;
+
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                    }
+                }
+
+                .note {
+                    text-align: end;
+                    margin-right: 1rem;
+
+                    max-width: 10rem;
+                    font-size: 0.9rem;
+                    line-height: 1;
+                    color: #464646;
+                }
+            }
+
+            .header {
+                grid-area: header;
+            }
+        }
+
+        .payslip {
+            grid-area: payslip;
+
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+        .badges {
+            grid-area: payslip;
+        }
+    }
+}
+
+@media (max-width: 64rem) {
+    .main_div {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 42rem) {
+    .main_div {
+        padding: 0 1rem;
+        flex-direction: column;
+
+        .right {
+            grid-template-areas:
+                "def"
+                "group"
+                "time"
+                "main"
+                "payslip";
+            grid-template-columns: auto;
+            row-gap: 1rem;
+
+            .time {
+                margin-left: 0;
+            }
+
+            .main {
+                grid-template-areas:
+                    "header"
+                    "name"
+                    "fin";
+                row-gap: 0.4rem;
+
+                .fin {
+                    margin-top: 1.5rem;
+                }
+            }
+        }
+    }
+}

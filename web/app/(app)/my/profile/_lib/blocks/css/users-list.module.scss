@@ -1,0 +1,60 @@
+@use "./../../../../../../css/buttons.module" as *;
+
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    .user_div {
+        display: grid;
+        grid-template-areas:
+            "company button"
+            "title button";
+        grid-template-columns: 1fr 4rem;
+        column-gap: 0.4rem;
+
+        padding: 0.3rem 0.6rem;
+        background-color: var(--darker1);
+        border-radius: 0.4rem;
+
+        .company {
+            grid-area: company;
+            font-size: 0.9rem;
+            font-weight: 500;
+            line-height: 1.1;
+
+            word-break: break-word;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+        }
+
+        .title {
+            grid-area: title;
+            font-size: 0.9rem;
+            line-height: 1.1;
+            color: #494949;
+
+            word-break: break-word;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+        }
+
+        .button {
+            grid-area: button;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .current {
+                font-size: 0.9rem;
+                font-weight: 500;
+            }
+
+            .switch_button {
+                @extend .bold_text_button;
+                font-size: 0.9rem;
+                color: var(--input_border);
+            }
+        }
+    }
+}

@@ -1,0 +1,193 @@
+@use "./../../../../../../css/sass.module" as *;
+
+.header_link {
+    color: #3c454d;
+}
+
+.header_div {
+    width: 100svw;
+    z-index: 10000;
+
+    box-shadow: 0 -2px 5px #2424241a;
+    background-color: #bfddf8b9;
+    transition: all 0.3s ease-in-out;
+
+    touch-action: none;
+    overscroll-behavior: contain;
+
+    .main_div {
+        display: grid;
+        grid-template-areas: "account e menu links";
+        grid-template-columns: 2rem 1fr 6rem auto;
+        align-items: center;
+
+        //position: relative;
+
+        margin: 0 1rem;
+
+        height: 3rem;
+
+        .menu_div {
+            grid-area: menu;
+
+            display: flex;
+            gap: 1rem;
+
+            position: relative;
+
+            .menu_button {
+                @extend .empty_button;
+
+                display: flex;
+                gap: 0.4rem;
+
+                &:hover,
+                &:active,
+                &:focus {
+                    .menu_icon {
+                        transform: rotate(360deg);
+                    }
+                }
+
+                .menu_button_text {
+                    font-weight: 500;
+                }
+
+                .menu_icon {
+                    transition: all 0.3s ease-in-out;
+                    touch-action: manipulation;
+                    will-change: transform;
+
+                    font-size: 1.3rem;
+
+                    font-variation-settings:
+                        "FILL" 0,
+                        "wght" 400,
+                        "GRAD" 0,
+                        "opsz" 40;
+                }
+            }
+
+            .stripe {
+                height: 2rems;
+                width: 1px;
+
+                background-color: #8c9297;
+            }
+        }
+
+        .links_div {
+            grid-area: links;
+
+            display: flex;
+            gap: 1rem;
+
+            margin-left: 1rem;
+        }
+
+        .account_div {
+            grid-area: account;
+
+            &:hover,
+            &:active,
+            &:focus {
+                .refresh {
+                    span {
+                        transform: rotate(360deg);
+                    }
+                }
+            }
+            .refresh {
+                @extend .empty_button;
+
+                display: none;
+                align-items: center;
+                justify-content: center;
+
+                padding: 0 0.4rem;
+                border-radius: 0.4rem;
+
+                font-size: 1.4rem;
+                line-height: 1;
+            }
+            .account_button {
+                @extend .empty_button;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 0.5rem;
+
+                .account_text {
+                    font-weight: 500;
+                }
+
+                .account_icon {
+                    font-size: 1.5rem;
+                }
+            }
+        }
+
+        .back {
+            grid-area: e;
+            display: none;
+            justify-content: center;
+
+            button {
+                @extend .empty_button;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                padding: 0 0.4rem;
+                // border: 0.1rem solid #9ec8ff;
+                border-radius: 0.4rem;
+
+                span {
+                    font-size: 1.15rem;
+                    line-height: 1;
+                }
+            }
+        }
+    }
+}
+
+.header_link {
+    font-weight: 500;
+    font-size: 1rem;
+
+    border-bottom: 0.1rem solid transparent;
+
+    &:hover {
+        color: #000000;
+    }
+
+    &.active {
+        color: #000000;
+
+        border-color: #000000;
+    }
+}
+
+@media (display-mode: standalone) {
+    .header_div {
+        .main_div {
+            margin-bottom: 2rem;
+
+            .account_div {
+                .refresh {
+                    display: flex;
+                }
+
+                .account_button {
+                    display: none;
+                }
+            }
+
+            .back {
+                display: flex;
+            }
+        }
+    }
+}

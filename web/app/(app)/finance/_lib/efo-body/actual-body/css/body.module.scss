@@ -1,0 +1,101 @@
+.finance_body_div {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+
+    margin: 1rem 2rem;
+
+    &.grouped {
+        .main_div {
+            gap: 3rem;
+
+            width: clamp(20rem, 90%, 60rem);
+        }
+    }
+
+    &.list {
+        .main_div {
+            gap: 0.6rem;
+            background-color: var(--darker1);
+
+            width: clamp(20rem, 90%, 60rem);
+        }
+    }
+
+    .main_div {
+        display: flex;
+        flex-direction: column;
+
+        padding: 1rem 2rem;
+        border-radius: 1rem;
+
+        &.loading {
+            box-sizing: border-box;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+
+        .page_total {
+            display: flex;
+            flex-direction: column;
+            gap: 0.1rem;
+
+            font-size: 0.9rem;
+            line-height: 0.9rem;
+            font-weight: 500;
+        }
+    }
+}
+
+@media (max-width: 54rem) {
+    .finance_body_div {
+        display: flex;
+        justify-content: center;
+        flex-grow: 1;
+
+        margin: 1rem 0;
+
+        &.grouped {
+            .main_div {
+                gap: 3rem;
+
+                width: 95%;
+            }
+        }
+
+        &.list {
+            .main_div {
+                gap: 0.6rem;
+                background-color: var(--darker1);
+
+                width: 95%;
+            }
+        }
+
+        .main_div {
+            display: flex;
+            flex-direction: column;
+
+            padding: 1rem 0.2rem;
+            border-radius: 1rem;
+
+            &.loading {
+                box-sizing: border-box;
+                justify-content: center;
+                align-items: center;
+                height: 100%;
+            }
+
+            .page_total {
+                display: flex;
+                flex-direction: column;
+                gap: 0.1rem;
+
+                font-size: 0.9rem;
+                line-height: 0.9rem;
+                font-weight: 500;
+            }
+        }
+    }
+}

@@ -1,0 +1,53 @@
+@use "./../../../../css/sass.module" as *;
+@use "./../../../../css/buttons.module" as *;
+
+.payslip_input {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    .payslip_main {
+        .payslip_div {
+            display: grid;
+            grid-template-areas:
+                "period e"
+                "name date";
+            grid-template-columns: minmax(0, 1fr) 6rem;
+
+            word-wrap: break-word;
+            margin: 0 1rem;
+
+            .name {
+                grid-area: name;
+                font-weight: 500;
+                line-height: 1.2;
+            }
+
+            .date {
+                grid-area: date;
+                display: flex;
+                justify-content: center;
+            }
+
+            .period {
+                grid-area: period;
+                font-size: 0.9rem;
+                color: #474747;
+            }
+        }
+    }
+
+    .payslip_bottom {
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+
+        .payslip_button {
+            @extend .bold_text_button;
+
+            font-size: 0.9rem;
+
+            color: var(--input_border);
+        }
+    }
+}

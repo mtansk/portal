@@ -1,0 +1,49 @@
+.block_div {
+    display: grid;
+    grid-template-areas:
+        "group det"
+        "name total";
+    grid-template-columns: 3fr 2fr;
+
+    background-color: var(--darker1);
+    padding: 0.3rem 1rem;
+    border-radius: 0.4rem;
+
+    width: 40rem;
+
+    .group {
+        grid-area: group;
+
+        font-size: 0.9rem;
+
+        line-height: 0.9rem;
+        color: #494949;
+    }
+
+    .details {
+        grid-area: det;
+
+        display: flex;
+        justify-content: flex-end;
+
+        font-size: 0.9rem;
+
+        line-height: 0.9rem;
+        color: #494949;
+    }
+
+    .name {
+        grid-area: name;
+    }
+
+    .total {
+        grid-area: total;
+
+        display: flex;
+        justify-content: flex-end;
+
+        font-weight: 500;
+
+        color: var(--m_green);
+    }
+}

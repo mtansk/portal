@@ -1,0 +1,38 @@
+@use "./../../../../../../css/buttons.module" as *;
+
+.reg_button {
+    @extend .bold_text_button;
+
+    font-size: 1rem;
+    line-height: 1.1;
+    font-size: 0.9rem;
+    margin-left: 0.5rem;
+    /*   color:; */
+}
+
+.resend_button {
+    @extend .bold_text_button;
+
+    font-size: 0.9rem;
+    line-height: 1.1;
+    width: 6rem;
+    /*   color:; */
+}
+
+.spinner_div {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.buttons_div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+
+    margin-top: 1rem;
+
+    margin-right: 1rem;
+
+    //height: 1.5rem;
+}
